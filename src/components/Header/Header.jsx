@@ -54,7 +54,7 @@ const Header = () => {
         </div>
 
         
-          <div className={`absolute top-[0px] right-[-999px]    shadow-md w-8/12  bg-secondary md:hidden min-h-screen ${isShowMobileMenu ? "right-[0px]" : ""} transform transition-all duration-500 ease-in-out`}>
+          <div className={`absolute top-[0px] right-[-999px]    shadow-md w-8/12  bg-secondary md:hidden min-h-screen ${isShowMobileMenu ? "right-[0px]" : ""} transform transition-all duration-500 ease-in-out z-100`}>
             <Mobile  setShowMobileMenu={setShowMobileMenu} />
           </div>
        
