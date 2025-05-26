@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo/logo.png";
 import manIcons from "../../assets/icons/man.png";
 import searchIcons from "../../assets/icons/serach.png";
@@ -10,9 +10,24 @@ import Mobile from "./Mobile";
 
 const Header = () => {
   const [isShowMobileMenu, setShowMobileMenu] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  },[])
+
 
   return (
-    <nav className="py-6 bg-white shadow-md relative">
+    <nav className={`py-6 bg-white shadow-md relative ${scrollY > 50 ? "fixed-nav" : "bg-transparent"}`}>
       <div className="flex justify-between items-center  w-11/12 mx-auto ">
         <div>
           <img src={logo} alt="logo" className="w-[185px] h-[35px]" />
