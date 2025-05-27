@@ -5,6 +5,7 @@ import Banner from './Pages/Banner'
 import bnnerImg from './assets/banner.jpg'  
 import About from './Pages/About'
 import Category from './Pages/Category'
+import TopProducts from './Pages/TopProducts'
 
 function App() {
 
@@ -18,6 +19,9 @@ function App() {
         </section>
         <section>
           <Category/>
+        </section>
+        <section>
+          <TopProducts/>
         </section>
         <section>
           <About/>
