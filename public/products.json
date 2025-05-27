@@ -1,0 +1,583 @@
+[
+  {
+   
+    "name": "Modern Wooden Chair",
+    "category": "Chair",
+    "price": 8500,
+    "discountPrice": 7500,
+    "stock": 14,
+    "rating": 4.6,
+    "reviews": 18,
+    "description": "Elegant and durable wooden chair for your dining room.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/61VCSuS9MaL._AC_SX679_.jpg",
+    "colorOptions": ["Brown", "Orange", "Gray"],
+    "colorImages": {
+      "Brown": "chttps://m.media-amazon.com/images/I/71FJ-DMQ4vL._AC_SX679_.jpg",
+      "Orange": "https://m.media-amazon.com/images/I/61d+-bhbgNL._AC_SX679_.jpg",
+      "Gray": "https://m.media-amazon.com/images/I/61CoKDvNrnL._AC_SX679_.jpg"
+    },
+    "material": "Solid Wood",
+    "dimensions": { "width": "60cm", "height": "90cm", "depth": "55cm" },
+    "features": [
+      "Ergonomic backrest",
+      "Scratch-resistant finish",
+      "Handcrafted design"
+    ],
+    "sku": "CHAIR-1101",
+    "isFeatured": true,
+    "isNewArrival": false,
+    "tags": ["Dining", "Wooden", "Classic"],
+    "createdAt": "2024-05-21"
+  },
+  {
+
+    "name": "Luxury Office Chair",
+    "category": "Chair",
+    "price": 12000,
+    "discountPrice": 11000,
+    "stock": 8,
+    "rating": 4.8,
+    "reviews": 22,
+    "description": "https://m.media-amazon.com/images/I/71UPdCo6XQL._AC_SX679_.jpg",
+    "defaultColorImage": "officechair1_black.jpg",
+    "colorOptions": ["Black", "Gray", "Cream"],
+    "colorImages": {
+      "Black": "https://m.media-amazon.com/images/I/71UPdCo6XQL._AC_SX679_.jpg",
+      "Gray": "https://m.media-amazon.com/images/I/71UPdCo6XQL._AC_SX679_.jpg",
+      "Cream": "https://m.media-amazon.com/images/I/71VYNXt0vYL._AC_SX679_.jpg"
+    },
+    "material": "Mesh and Fabric",
+    "dimensions": { "width": "60cm", "height": "110cm", "depth": "60cm" },
+    "features": ["Adjustable height", "360-degree swivel", "Lumbar support"],
+    "sku": "CHAIR-1102",
+    "isFeatured": true,
+    "isNewArrival": true,
+    "tags": ["Office", "Ergonomic", "Comfortable"],
+    "createdAt": "2024-05-22"
+  },
+  {
+   
+    "name": "Vintage Wooden Dining Chair",
+    "category": "Chair",
+    "price": 6500,
+    "discountPrice": 5900,
+    "stock": 15,
+    "rating": 4.7,
+    "reviews": 30,
+    "description": "Classic wooden dining chair with comfortable seating.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/61zTs7MRgCL._AC_SX679_.jpg",
+    "colorOptions": ["Black", "Natural", "White"],
+    "colorImages": {
+      "Black": "https://m.media-amazon.com/images/I/61uDd+Js1lL._AC_SX679_.jpg",
+      "Natural": "https://m.media-amazon.com/images/I/61zTs7MRgCL._AC_SX679_.jpg",
+      "White": "https://m.media-amazon.com/images/I/51cr-LaAxQL._AC_SX679_.jpg"
+    },
+    "material": "Wooden",
+    "dimensions": { "width": "55cm", "height": "85cm", "depth": "50cm" },
+    "features": ["Classic design", "Solid wood", "Comfy padding"],
+    "sku": "CHAIR-1103",
+    "isFeatured": false,
+    "isNewArrival": false,
+    "tags": ["Dining", "Wooden", "Vintage"],
+    "createdAt": "2024-05-23"
+  },
+  {
+    
+    "name": "Ergonomic Office Chair",
+    "category": "Chair",
+    "price": 9500,
+    "discountPrice": 8700,
+    "stock": 10,
+    "rating": 4.9,
+    "reviews": 40,
+    "description": "Ergonomic design with adjustable armrests and headrest for office use.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/716tq9Y8WOL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+    "colorOptions": ["Black", "Red", "Blue"],
+    "colorImages": {
+      "Black": "https://m.media-amazon.com/images/I/716tq9Y8WOL._AC_SX679_.jpg",
+      "Red": "https://m.media-amazon.com/images/I/71J8POdSvDL._AC_SX679_.jpg",
+      "Blue": "https://m.media-amazon.com/images/I/71rB4PTbZXL._AC_SX679_.jpg"
+    },
+    "material": "Mesh and Leather",
+    "dimensions": { "width": "70cm", "height": "120cm", "depth": "60cm" },
+    "features": ["Adjustable armrests", "Lumbar support", "Breathable mesh"],
+    "sku": "CHAIR-1104",
+    "isFeatured": false,
+    "isNewArrival": true,
+    "tags": ["Office", "Ergonomic", "Comfortable"],
+    "createdAt": "2024-05-24"
+  },
+  {
+    
+    "name": "Modern Rocking Chair",
+    "category": "Chair",
+    "price": 7000,
+    "discountPrice": 6500,
+    "stock": 12,
+    "rating": 4.7,
+    "reviews": 18,
+    "description": "A modern rocking chair for your living room or outdoor space.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/71GEi0ccGRL._AC_SX679_.jpg",
+    "colorOptions": ["Gray", "Pink", "White"],
+    "colorImages": {
+      "Gray": "https://m.media-amazon.com/images/I/91ZyrFqPTbL._AC_SX679_.jpg",
+      "Pink": "https://m.media-amazon.com/images/I/910C8Py3gKL._AC_SX679_.jpg",
+      "White": "https://m.media-amazon.com/images/I/71GEi0ccGRL._AC_SX679_.jpg"
+    },
+    "material": "Wood and Fabric",
+    "dimensions": { "width": "70cm", "height": "100cm", "depth": "70cm" },
+    "features": ["Rocking function", "Modern design", "Soft fabric seat"],
+    "sku": "CHAIR-1105",
+    "isFeatured": false,
+    "isNewArrival": true,
+    "tags": ["Living Room", "Rocking", "Modern"],
+    "createdAt": "2024-05-25"
+  },
+
+  {
+    
+    "name": "Leather Armchair",
+    "category": "Armchair",
+    "price": 15000,
+    "discountPrice": 14000,
+    "stock": 10,
+    "rating": 4.8,
+    "reviews": 25,
+    "description": "Luxury leather armchair with adjustable recliner for ultimate comfort.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/71V1O3bSjtL._AC_SX679_.jpg",
+    "colorOptions": ["Olive", "Blue", "Gray"],
+    "colorImages": {
+      "Olive": "https://m.media-amazon.com/images/I/61C95Kpx6qL._AC_SX679_.jpg",
+      "Blue": "https://m.media-amazon.com/images/I/41ZFOINlH7L._AC_SX679_.jpg",
+      "Gray": "https://m.media-amazon.com/images/I/41PbtFYnNkL._AC_SX679_.jpg"
+    },
+    "material": "Genuine Leather",
+    "dimensions": { "width": "80cm", "height": "110cm", "depth": "90cm" },
+    "features": ["Recliner", "Adjustable armrests", "High-quality leather"],
+    "sku": "ARMCHAIR-1201",
+    "isFeatured": true,
+    "isNewArrival": false,
+    "tags": ["Luxury", "Leather", "Comfort"],
+    "createdAt": "2024-05-21"
+  },
+  {
+   
+    "name": "Fabric Armchair",
+    "category": "Armchair",
+    "price": 8500,
+    "discountPrice": 7500,
+    "stock": 15,
+    "rating": 4.5,
+    "reviews": 30,
+    "description": "Soft fabric armchair with plush cushioning for extra comfort.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/618O5xzruCL._AC_SX679_.jpg",
+    "colorOptions": ["Blue", "Rose", "Khaki"],
+    "colorImages": {
+      "Blue": "https://m.media-amazon.com/images/I/71zvcX86eIL._AC_SX679_.jpg",
+      "Rose": "https://m.media-amazon.com/images/I/71X8uVfTqmL._AC_SX679_.jpg",
+      "Khaki": "https://m.media-amazon.com/images/I/61Mo5jEwLpL._AC_SX679_.jpg"
+    },
+    "material": "Fabric",
+    "dimensions": { "width": "75cm", "height": "100cm", "depth": "80cm" },
+    "features": ["Soft cushioning", "Comfortable seating", "Modern design"],
+    "sku": "ARMCHAIR-1202",
+    "isFeatured": false,
+    "isNewArrival": true,
+    "tags": ["Fabric", "Comfortable", "Affordable"],
+    "createdAt": "2024-05-22"
+  },
+  {
+    
+    "name": "Vintage Armchair",
+    "category": "Armchair",
+    "price": 12000,
+    "discountPrice": 11000,
+    "stock": 8,
+    "rating": 4.7,
+    "reviews": 18,
+    "description": "Classic vintage armchair with a wooden frame and stylish upholstery.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/61OYKtMTJ8L._AC_SX679_.jpg",
+    "colorOptions": ["Beige", "Gray", "Maroon"],
+    "colorImages": {
+      "Beige": "https://m.media-amazon.com/images/I/71LElUIzf0L._AC_SY879_.jpg",
+      "Gray": "https://m.media-amazon.com/images/I/71LElUIzf0L._AC_SY879_.jpg",
+      "Maroon": "https://m.media-amazon.com/images/I/71LElUIzf0L._AC_SY879_.jpg"
+    },
+    "material": "Wooden Frame, Fabric",
+    "dimensions": { "width": "70cm", "height": "90cm", "depth": "80cm" },
+    "features": ["Vintage design", "Wooden frame", "Stylish upholstery"],
+    "sku": "ARMCHAIR-1203",
+    "isFeatured": true,
+    "isNewArrival": false,
+    "tags": ["Vintage", "Classic", "Wooden"],
+    "createdAt": "2024-05-23"
+  },
+  {
+
+    "name": "Reclining Armchair",
+    "category": "Armchair",
+    "price": 18000,
+    "discountPrice": 17000,
+    "stock": 5,
+    "rating": 4.9,
+    "reviews": 50,
+    "description": "High-back reclining armchair with massage function and heated seats.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/51tS5F8Ve7L._AC_SX679_.jpg",
+    "colorOptions": ["Black", "Brown", "Gray"],
+    "colorImages": {
+      "Black": "https://m.media-amazon.com/images/I/51tS5F8Ve7L._AC_SX679_.jpg",
+      "Brown": "https://m.media-amazon.com/images/I/519f54803GL._AC_SX679_.jpg",
+      "Gray": "https://m.media-amazon.com/images/I/81TsrKjv+ZL._AC_SX679_.jpg"
+    },
+    "material": "Synthetic Leather",
+    "dimensions": { "width": "85cm", "height": "115cm", "depth": "95cm" },
+    "features": [
+      "Reclining function",
+      "Massage and heated seats",
+      "USB charging port"
+    ],
+    "sku": "ARMCHAIR-1204",
+    "isFeatured": true,
+    "isNewArrival": true,
+    "tags": ["Recliner", "Massage", "Comfort"],
+    "createdAt": "2024-05-24"
+  },
+  {
+    
+    "name": "Modern Armchair",
+    "category": "Armchair",
+    "price": 9500,
+    "discountPrice": 9000,
+    "stock": 12,
+    "rating": 4.6,
+    "reviews": 28,
+    "description": "Contemporary armchair with clean lines and neutral fabric.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/61FrgbcvmQL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+    "colorOptions": ["Light Gray", "Dark Gray", "Red"],
+    "colorImages": {
+      "Light Gray": "https://m.media-amazon.com/images/I/61FrgbcvmQL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "Dark Gray": "https://m.media-amazon.com/images/I/71JZ8Lo45zL._AC_SX679_.jpg",
+      "Red": "https://m.media-amazon.com/images/I/71+KrsenoQL._AC_SX679_.jpg"
+    },
+    "material": "Fabric",
+    "dimensions": { "width": "80cm", "height": "95cm", "depth": "85cm" },
+    "features": ["Contemporary design", "Comfortable seating", "Neutral color"],
+    "sku": "ARMCHAIR-1205",
+    "isFeatured": false,
+    "isNewArrival": false,
+    "tags": ["Modern", "Contemporary", "Comfortable"],
+    "createdAt": "2024-05-25"
+  },
+
+  {
+    
+    "name": "3-Seater Velvet Sofa",
+    "category": "Sofa",
+    "price": 35000,
+    "discountPrice": 32000,
+    "stock": 6,
+    "rating": 4.9,
+    "reviews": 40,
+    "description": "Luxurious 3-seater velvet sofa with plush cushioning.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/61Yb6Hck9YL._AC_SX679_.jpg",
+    "colorOptions": ["Emerald Green", "Royal Blue", "Pink"],
+    "colorImages": {
+      "Emerald Green": "https://m.media-amazon.com/images/I/616H9jS19gL._AC_SX679_.jpg",
+      "Royal Blue": "https://m.media-amazon.com/images/I/61LyxL0r1dL._AC_SX679_.jpg",
+      "Pink": "https://m.media-amazon.com/images/I/61xWF6tm4PL._AC_SX679_.jpg"
+    },
+    "material": "Velvet Fabric, Wooden Frame",
+    "dimensions": { "width": "210cm", "height": "85cm", "depth": "90cm" },
+    "features": ["3-seater", "Plush cushions", "Premium velvet fabric"],
+    "sku": "SOFA-1101",
+    "isFeatured": true,
+    "isNewArrival": true,
+    "tags": ["Luxury", "Velvet", "Living Room"],
+    "createdAt": "2024-05-21"
+  },
+  {
+    
+    "name": "Convertible Sofa Bed",
+    "category": "Sofa",
+    "price": 28000,
+    "discountPrice": 26000,
+    "stock": 8,
+    "rating": 4.7,
+    "reviews": 35,
+    "description": "Modern convertible sofa bed, perfect for compact spaces.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/71+h43ytbdL._AC_SX679_.jpg",
+    "colorOptions": ["Gray", "Yellow", "Orange"],
+    "colorImages": {
+      "Gray": "https://m.media-amazon.com/images/I/71dqmKhK0+L._AC_SX679_.jpg",
+      "Yellow": "https://m.media-amazon.com/images/I/71QIYZ79WEL._AC_SX679_.jpg",
+      "Orange": "https://m.media-amazon.com/images/I/71DZPQtE1DL._AC_SX679_.jpg"
+    },
+    "material": "Fabric, Metal Frame",
+    "dimensions": { "width": "190cm", "height": "80cm", "depth": "85cm" },
+    "features": ["Convertible to bed", "Compact design", "Sturdy metal frame"],
+    "sku": "SOFA-1102",
+    "isFeatured": false,
+    "isNewArrival": true,
+    "tags": ["Bed Sofa", "Compact", "Multi-functional"],
+    "createdAt": "2024-05-22"
+  },
+  {
+    
+    "name": "L-Shaped Corner Sofa",
+    "category": "Sofa",
+    "price": 45000,
+    "discountPrice": 42000,
+    "stock": 4,
+    "rating": 4.8,
+    "reviews": 22,
+    "description": "Spacious L-shaped corner sofa ideal for family lounging.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/61O-gzbg51L._AC_SX679_.jpg",
+    "colorOptions": ["Brown", "Dark Gray", "Ivory"],
+    "colorImages": {
+      "Brown": "https://m.media-amazon.com/images/I/61O-gzbg51L._AC_SX679_.jpg",
+      "Dark Gray": "https://m.media-amazon.com/images/I/61O-gzbg51L._AC_SX679_.jpg",
+      "Ivory": "https://m.media-amazon.com/images/I/61O-gzbg51L._AC_SX679_.jpg"
+    },
+    "material": "Fabric, Wooden Frame",
+    "dimensions": { "width": "250cm", "height": "90cm", "depth": "180cm" },
+    "features": ["L-shaped", "Spacious seating", "High-resilience foam"],
+    "sku": "SOFA-1103",
+    "isFeatured": true,
+    "isNewArrival": false,
+    "tags": ["Family Sofa", "Corner Sofa", "Large"],
+    "createdAt": "2024-05-23"
+  },
+  {
+  
+    "name": "Chesterfield Leather Sofa",
+    "category": "Sofa",
+    "price": 55000,
+    "discountPrice": 50000,
+    "stock": 3,
+    "rating": 5.0,
+    "reviews": 18,
+    "description": "Classic Chesterfield sofa with tufted genuine leather upholstery.",
+    "defaultColorImage": "sofa4_black.jpg",
+    "colorOptions": ["Brown"],
+    "colorImages": {
+      "Brown": "sofa4_brown.jpg"
+    },
+    "material": "Genuine Leather, Wooden Frame",
+    "dimensions": { "width": "220cm", "height": "85cm", "depth": "90cm" },
+    "features": ["Tufted back", "Premium leather", "Classic style"],
+    "sku": "SOFA-1104",
+    "isFeatured": true,
+    "isNewArrival": false,
+    "tags": ["Chesterfield", "Leather", "Luxury"],
+    "createdAt": "2024-05-24"
+  },
+  {
+    
+    "name": "Minimalist 2-Seater Sofa",
+    "category": "Sofa",
+    "price": 22000,
+    "discountPrice": 20000,
+    "stock": 7,
+    "rating": 4.5,
+    "reviews": 20,
+    "description": "Simple and elegant 2-seater sofa with neutral fabric.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/913RwcWvU7L._AC_SX679_.jpg",
+    "colorOptions": [ "Blue"],
+    "colorImages": {
+   
+      "Blue": "https://m.media-amazon.com/images/I/9175aAgnMnL._AC_SX679_.jpg"
+    },
+    "material": "Fabric, Wooden Frame",
+    "dimensions": { "width": "160cm", "height": "85cm", "depth": "80cm" },
+    "features": ["Minimalist design", "Compact size", "Comfortable cushioning"],
+    "sku": "SOFA-1105",
+    "isFeatured": false,
+    "isNewArrival": true,
+    "tags": ["Minimal", "2-Seater", "Modern"],
+    "createdAt": "2024-05-25"
+  },
+  
+  {
+    
+    "name": "King Size Wooden Bed",
+    "category": "Bed",
+    "price": 60000,
+    "discountPrice": 57000,
+    "stock": 5,
+    "rating": 4.9,
+    "reviews": 30,
+    "description": "Elegant king size bed crafted from solid teak wood.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/81WByh19zmL._AC_SX679_.jpg",
+    "colorOptions": ["Natural Wood"],
+    "colorImages": {
+      
+      "Natural Wood": "https://m.media-amazon.com/images/I/81bIt0t2CZL._AC_SX679_.jpg"
+    },
+    "material": "Teak Wood",
+    "dimensions": { "width": "210cm", "height": "120cm", "depth": "200cm" },
+    "features": ["Solid wood frame", "Premium finish", "Spacious size"],
+    "sku": "BED-1101",
+    "isFeatured": true,
+    "isNewArrival": true,
+    "tags": ["King Size", "Wooden", "Luxury"],
+    "createdAt": "2024-05-26"
+  },
+  {
+    
+    "name": "Storage Platform Bed",
+    "category": "Bed",
+    "price": 48000,
+    "discountPrice": 45000,
+    "stock": 7,
+    "rating": 4.7,
+    "reviews": 22,
+    "description": "Modern platform bed with under-bed storage drawers.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/81WUJ8avQvL._AC_SX679_.jpg",
+    "colorOptions": ["Black", "Oak"],
+    "colorImages": {
+      "Black": "https://m.media-amazon.com/images/I/914Q2JnxUvL._AC_SX679_.jpg",
+      "Oak": "https://m.media-amazon.com/images/I/81tpJBIXW0L._AC_SX679_.jpg"
+    },
+    "material": "Engineered Wood, Fabric Headboard",
+    "dimensions": { "width": "200cm", "height": "110cm", "depth": "190cm" },
+    "features": ["Storage drawers", "Upholstered headboard", "Minimalist design"],
+    "sku": "BED-1102",
+    "isFeatured": false,
+    "isNewArrival": true,
+    "tags": ["Platform", "Storage", "Modern"],
+    "createdAt": "2024-05-26"
+  },
+  {
+    
+    "name": "Queen Size Upholstered Bed",
+    "category": "Bed",
+    "price": 52000,
+    "discountPrice": 49000,
+    "stock": 4,
+    "rating": 4.8,
+    "reviews": 18,
+    "description": "Luxurious queen size bed with soft upholstered headboard.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/81FsoG1LqpL._AC_SX679_.jpg",
+    "colorOptions": ["Beige", "Charcoal"],
+    "colorImages": {
+      "Beige": "https://m.media-amazon.com/images/I/919iZw-0h0L._AC_SX679_.jpg",
+      "Charcoal": "https://m.media-amazon.com/images/I/919iZw-0h0L._AC_SX679_.jpg"
+    },
+    "material": "Fabric, Wooden Frame",
+    "dimensions": { "width": "200cm", "height": "115cm", "depth": "190cm" },
+    "features": ["Soft upholstery", "Queen size", "Sturdy construction"],
+    "sku": "BED-1103",
+    "isFeatured": true,
+    "isNewArrival": false,
+    "tags": ["Queen Size", "Upholstered", "Comfort"],
+    "createdAt": "2024-05-26"
+  },
+  
+  {
+   
+    "name": "Modern Pendant Light",
+    "category": "Lighting",
+    "price": 4200,
+    "discountPrice": 3500,
+    "stock": 18,
+    "rating": 4.7,
+    "reviews": 22,
+    "description": "Stylish modern pendant light perfect for dining or living areas.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/515jymMrBcL._AC_SX679_PIbundle-2,TopRight,0,0_SH20_.jpg",
+    "colorOptions": ["Black", "Cool White", "Golden Glow"],
+    "colorImages": {
+      "Black": "https://m.media-amazon.com/images/I/515jymMrBcL._AC_SX679_PIbundle-2,TopRight,0,0_SH20_.jpg",
+      "Cool White": "https://m.media-amazon.com/images/I/51k4tmSCZBL._AC_SX679_.jpg",
+      "Golden Glow": "https://m.media-amazon.com/images/I/61Xm4CWghWL._AC_SX679_.jpg"
+    },
+    "material": "Metal & Glass",
+    "dimensions": { "width": "25cm", "height": "40cm", "depth": "25cm" },
+    "features": ["Energy saving", "Adjustable cable", "Soft ambient glow"],
+    "sku": "LIGHT-2001",
+    "isFeatured": true,
+    "isNewArrival": false,
+    "tags": ["Pendant", "Modern", "Dining"],
+    "createdAt": "2024-05-21"
+  },
+  {
+ 
+    "name": "Rustic Wall Lamp",
+    "category": "Lighting",
+    "price": 2800,
+    "discountPrice": 2500,
+    "stock": 12,
+    "rating": 4.5,
+    "reviews": 16,
+    "description": "Antique-style wall lamp perfect for cozy bedrooms or cafes.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/61i3RWF9PzL._AC_SX679_PIbundle-2,TopRight,0,0_SH20_.jpg",
+    "colorOptions": ["Warm Yellow", "Soft White"],
+    "colorImages": {
+      "Warm Yellow": "https://m.media-amazon.com/images/I/61i3RWF9PzL._AC_SX679_PIbundle-2,TopRight,0,0_SH20_.jpg",
+      "Soft White": "https://m.media-amazon.com/images/I/61i3RWF9PzL._AC_SX679_PIbundle-2,TopRight,0,0_SH20_.jpg"
+    },
+    "material": "Wood & Metal",
+    "dimensions": { "width": "20cm", "height": "35cm", "depth": "15cm" },
+    "features": ["Wall mounted", "Edison bulb included", "Vintage look"],
+    "sku": "LIGHT-2002",
+    "isFeatured": false,
+    "isNewArrival": true,
+    "tags": ["Wall", "Rustic", "Bedroom"],
+    "createdAt": "2024-05-22"
+  },
+ 
+  {
+    
+    "name": "Glass Table Lamp",
+    "category": "Lighting",
+    "price": 3600,
+    "discountPrice": 3200,
+    "stock": 14,
+    "rating": 4.4,
+    "reviews": 20,
+    "description": "Elegant glass table lamp for your reading corner.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/81hiIRmPwnL._AC_SX679_.jpg",
+    "colorOptions": ["Soft White", "Warm White"],
+    "colorImages": {
+      "Soft White": "https://m.media-amazon.com/images/I/81hiIRmPwnL._AC_SX679_.jpg",
+      "Warm White": "https://m.media-amazon.com/images/I/719uxNv+3qL._AC_SX679_.jpg"
+    },
+    "material": "Glass & Fabric",
+    "dimensions": { "width": "25cm", "height": "45cm", "depth": "25cm" },
+    "features": ["Soft glow", "Classic design", "Durable shade"],
+    "sku": "LIGHT-2004",
+    "isFeatured": false,
+    "isNewArrival": false,
+    "tags": ["Table", "Glass", "Classic"],
+    "createdAt": "2024-05-24"
+  },
+  {
+    
+    "name": "Industrial Floor Lamp",
+    "category": "Lighting",
+    "price": 7800,
+    "discountPrice": 7100,
+    "stock": 9,
+    "rating": 4.9,
+    "reviews": 28,
+    "description": "Tall industrial-style floor lamp ideal for loft spaces.",
+    "defaultColorImage": "https://m.media-amazon.com/images/I/61pJwYkeP9L._AC_SX679_.jpg",
+    "colorOptions": ["Matte Black", "Rust Brown"],
+    "colorImages": {
+      "Matte Black": "https://m.media-amazon.com/images/I/71IAlyGsidL._AC_SX679_.jpg",
+      "Rust Brown": "https://m.media-amazon.com/images/I/51zNACOcIRL._AC_SX679_.jpg"
+    },
+    "material": "Metal",
+    "dimensions": { "width": "35cm", "height": "160cm", "depth": "35cm" },
+    "features": ["Height adjustable", "Heavy base", "Industrial finish"],
+    "sku": "LIGHT-2005",
+    "isFeatured": true,
+    "isNewArrival": false,
+    "tags": ["Floor", "Industrial", "Living Room"],
+    "createdAt": "2024-05-25"
+  }
+
+
+
+
+
+]

@@ -6,6 +6,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import './Styles/style.css'
 
 import MainLayout from './Layouts/MainLayout.jsx'
+import Login from './UserAuthentication/Login.jsx'
+
+import UserProvider from './Context/User/UserProvider/UserProvider.jsx'
+import Registration from './UserAuthentication/Registration.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +19,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <App />
+      },
+      {
+        path: 'login',
+        element:<Login/>
+      },
+      {
+        path: 'register',
+        Component:Registration
       }
     ]
   }
@@ -22,7 +34,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <UserProvider >
     <RouterProvider router={router} ></RouterProvider>
+    </UserProvider>
    
   </StrictMode>,
 )
