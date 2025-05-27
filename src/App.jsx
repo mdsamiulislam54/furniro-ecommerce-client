@@ -6,6 +6,7 @@ import bnnerImg from './assets/banner.jpg'
 import About from './Pages/About'
 import Category from './Pages/Category'
 import TopProducts from './Pages/TopProducts'
+import InspirationRooms from './Pages/InspirationRooms'
 
 function App() {
 
@@ -22,6 +23,9 @@ function App() {
         </section>
         <section>
           <TopProducts/>
+        </section>
+        <section>
+          <InspirationRooms/>
         </section>
         <section>
           <About/>
