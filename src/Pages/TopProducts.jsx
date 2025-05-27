@@ -6,6 +6,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
+import { motion } from "motion/react"
 
 const TopProducts = () => {
   const { data, isError, isLoading } = useQuery({
@@ -34,7 +35,11 @@ const TopProducts = () => {
         <h1 className="text-3xl font-bold  mb-10">Top Products</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {data.map((product) => (
-            <div
+            <motion.div  
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 ,}}
+            transition={{duration: 0.5, ease: "easeInOut"}}
+              viewport={{ amount: 0.3}}
               key={product.id}
               className=" p-4 rounded-lg shadow-lg relative"
             >
@@ -88,7 +93,7 @@ const TopProducts = () => {
                     <Tooltip id="add-to-wishlist-tooltip" />
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         <div className="text-center mt-10">

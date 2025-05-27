@@ -1,18 +1,29 @@
 import React from "react";
 import images from "../assets/furniture-chair.png";
 import Button from "../components/Button";
+import { motion } from "motion/react";
+
 
 const About = () => {
   return (
     <div className="w-11/12 mx-auto flex flex-col lg:flex-row gap-10 items-center justify-between my-20">
-      <div className="flex-1">
+      <motion.div className="flex-1" accordion
+        initial={{ opacity: 0, x: -200,}}
+        whileInView={{ opacity: 1, x: 0,  }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ amount: 0.3 }}>
         <img
           src={images}
           alt="About Us"
           className="w-full h-[400px] object-cover"
         />
-      </div>
-      <div className="flex-1 space-y-6">
+      </motion.div>
+      <motion.div className="flex-1 space-y-6"
+        initial={{ opacity: 0, x: 200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, ease: "easeInOut" }}
+        viewport={{ amount: 0.3 }}
+      >
         <h4 className="text-lg font-semibold tracking-wide uppercase">
           SAVE UPTO <span className="text-primary ">20% OFF</span>
         </h4>
@@ -31,7 +42,7 @@ const About = () => {
           living space into a sanctuary.
         </p>
         <Button text="Order Now"></Button>
-      </div>
+      </motion.div>
     </div>
   );
 };

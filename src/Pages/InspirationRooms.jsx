@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { motion } from "motion/react"
 
 // import required modules
 import { Navigation, Pagination } from "swiper/modules";
@@ -15,7 +16,14 @@ const InspirationRooms = () => {
     <div className="bg-secondary py-20">
       <div className="w-11/12 mx-auto ">
         <div className="lg:flex items-center gap-5 overflow-hidden">
-          <div className="flex-1 max-lg:mb-8">
+          <motion.div className="flex-1 max-lg:mb-8" accordion
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            viewport={{ amount: 0.3 }}
+
+          
+          >
             <h3 className="text-5xl font-bold mb-4">
               50+ Beautiful rooms inspiration
             </h3>
@@ -24,9 +32,13 @@ const InspirationRooms = () => {
               inspire you
             </p>
             <Button text="Explore More" />
-          </div>
+          </motion.div>
           <div className="flex-1 relative max-lg:mb-8">
-            <img
+            <motion.img
+                initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            viewport={{ amount: 0.3 }}
               className=" rounded-lg"
               src="https://img.freepik.com/free-photo/small-juvenile-bedroom-arrangement_23-2151113813.jpg"
               alt=""
@@ -42,7 +54,13 @@ const InspirationRooms = () => {
               </p>
             </span>
           </div>
-          <div className="flex-1 overflow-hidden  relative ">
+          <motion.div className="flex-1 overflow-hidden  relative " accordion
+          
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}  
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            viewport={{ amount: 0.3 }}
+          >
             <div className="absolute top-[40%] right-0 z-10 flex flex-col items-center">
               <button className="swiper-button-next-custom cursor-pointer p-2 bg-primary text-white rounded-full mt-4">
                 <FaArrowCircleRight />
@@ -83,7 +101,7 @@ const InspirationRooms = () => {
                 />
               </SwiperSlide>
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
