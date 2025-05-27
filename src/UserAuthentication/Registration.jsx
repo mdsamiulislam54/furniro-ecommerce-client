@@ -8,7 +8,7 @@ import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const Registration = () => {
-  const { loginWithGoogle, createUser , user } = use(UserContext);
+  const { loginWithGoogle, createUser, user } = use(UserContext);
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
@@ -56,122 +56,145 @@ const Registration = () => {
       });
   };
 
-   const handleGoogleLogin = () => {
-
-       if(user){
-           Swal.fire({
-             title: "Already Logged In",
-             text: "You are already logged in as " ,
-             icon: "info",
-             confirmButtonText: "OK",
-           }).then(() => {
-             navigate("/");
-           });
-           return;
-           
-         }
-        loginWithGoogle()
-        .then((result) => {
-          const user = result.user;
-          Swal.fire({
-            title: "Login Successful",
-            text: `Welcome back, ${user.displayName || user.email}!`,
-            icon: "success",
-            confirmButtonText: "OK",
-          }).then(() => {
-            navigate("/");
-          });
-        })
-        .catch((error) => {
-          Swal.fire({
-            title: "Login Failed",
-            text: error.message,
-            icon: "error",
-            confirmButtonText: "OK",
-          });
-          console.error("Google login failed:", error);
-        });
+  const handleGoogleLogin = () => {
+    if (user) {
+      Swal.fire({
+        title: "Already Logged In",
+        text: "You are already logged in as ",
+        icon: "info",
+        confirmButtonText: "OK",
+      }).then(() => {
+        navigate("/");
+      });
+      return;
     }
+    loginWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        Swal.fire({
+          title: "Login Successful",
+          text: `Welcome back, ${user.displayName || user.email}!`,
+          icon: "success",
+          confirmButtonText: "OK",
+        }).then(() => {
+          navigate("/");
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "Login Failed",
+          text: error.message,
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        console.error("Google login failed:", error);
+      });
+  };
 
   return (
-    <div className="bg-secondary">
-      <div className="max-w-xl mx-auto shadow-lg p-6 min-h-screen  bg-white/30 rounded-lg">
-        <h1 className="text-2xl font-bold text-center my-4">Registration</h1>
-        <form className="" accordion onSubmit={handleRegistration}>
-          <div className="mb-4">
-            <label className="block text-sm font-medium mb-2" htmlFor="email">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              className="w-full p-2 border border-gray-300 rounded"
-              required
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="block text-sm font-medium mb-2" htmlFor="email">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              className="w-full p-2 border border-gray-300 rounded"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-sm font-medium mb-2"
-              htmlFor="password"
+    <div className="">
+      <div className=" lg:flex items-center justify-center p-6 min-h-screen  rounded-lg">
+        <form
+          className="lg:flex lg:w-7/12 justify-between mx-auto gap-3  lg:h-[500px] shadow-lg   "
+          accordion
+          onSubmit={handleRegistration}
+        >
+          <div className="flex-1 bg-primary  rounded-br-[100px] lg:rounded-tr-[100px] flex flex-col items-center justify-center text-white p-6 overflow-hidden">
+            <h1 className="text-4xl font-bold mb-4">Welcome to Furniro </h1>
+            <p className="text-gray-200 mb-4">
+              Please enter your email and password to login.
+            </p>
+            <Link
+              to={"/"}
+              className="bg-white text-primary px-4 py-2 rounded-md "
             >
-              Password
-            </label>
-            <span className="relative">
+              Home
+            </Link>
+          </div>
+          <div className="flex-1 p-4">
+            <h1 className="text-2xl font-bold text-center my-4">
+              Registration
+            </h1>
+            <div className="mb-4">
+              <label className="block text-sm font-medium mb-2" htmlFor="email">
+                Name
+              </label>
               <input
-                type={showPassword ? "text" : "password"}
-                name="password"
+                type="text"
+                name="name"
                 className="w-full p-2 border border-gray-300 rounded"
                 required
               />
-              <span className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                {showPassword ? (
-                  <FaRegEye
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
-                    onClick={() => setShowPassword(!showPassword)}
-                  />
-                ) : (
-                  <FaRegEyeSlash
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
-                    onClick={() => setShowPassword(!showPassword)}
-                  />
-                )}
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium mb-2" htmlFor="email">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                className="w-full p-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                className="block text-sm font-medium mb-2"
+                htmlFor="password"
+              >
+                Password
+              </label>
+              <span className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  className="w-full p-2 border border-gray-300 rounded"
+                  required
+                />
+                <span className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                  {showPassword ? (
+                    <FaRegEye
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                      onClick={() => setShowPassword(!showPassword)}
+                    />
+                  ) : (
+                    <FaRegEyeSlash
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                      onClick={() => setShowPassword(!showPassword)}
+                    />
+                  )}
+                </span>
               </span>
-            </span>
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-primary hover:bg-primary/85 cursor-pointer text-white py-2 rounded hover:bg-primary-dark transition duration-300"
-          >
-            Registration
-          </button>
-        </form>
-        <div className="text-center mt-4">
-          <span className="text-center font-bold mb-4">Or</span>
-          <div className="my-5 flex flex-col gap-4 items-center">
-            <button onClick={handleGoogleLogin} className="flex items-center gap-3 px-6 py-2 text-black border border-gray-400 bg-white rounded-lg cursor-pointer">
-              <FcGoogle size={30} />
-              <span className="">Login with Google</span>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-primary hover:bg-primary/85 cursor-pointer text-white py-2 rounded hover:bg-primary-dark transition duration-300"
+            >
+              Registration
             </button>
-          </div>
-          <p className="text-lg text-gray-600">
+            <div className="text-center mt-4">
+       
+          <div className="my-5 lg:flex justify-between gap-4 items-center">
+            <button
+              onClick={handleGoogleLogin}
+              className="flex items-center gap-3 max-lg:w-full justify-center max-lg:mb-4 px-4 py-1 text-black border border-gray-400 bg-white rounded-lg cursor-pointer"
+            >
+              <FcGoogle size={30} />
+              
+            </button>
+               <p className="text-sm text-gray-600">
             Already have an account?{" "}
             <Link to="/login" className="text-primary hover:underline">
               Login
             </Link>
           </p>
+          </div>
+       
         </div>
+          </div>
+        </form>
+        
       </div>
     </div>
   );
