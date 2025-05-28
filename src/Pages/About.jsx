@@ -12,7 +12,10 @@ const About = () => {
         whileInView={{ opacity: 1, x: 0,  }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         viewport={{ amount: 0.3 }}>
-        <img
+        <motion.img
+
+          animate={{x:[0,50,0]}}
+          transition={{duration:4, repeat:Infinity}}
           src={images}
           alt="About Us"
           className="w-full h-[400px] object-cover"
@@ -25,7 +28,10 @@ const About = () => {
         viewport={{ amount: 0.3 }}
       >
         <h4 className="text-lg font-semibold tracking-wide uppercase">
-          SAVE UPTO <span className="text-primary ">20% OFF</span>
+          SAVE UPTO <motion.span 
+         animate={{ color: ["#000", "#FF6D60", "#00C897"] }}
+  transition={{ duration: 3, repeat: Infinity, times: [0, 0.5, 1] }}
+          className="text-primary ">20% OFF</motion.span>
         </h4>
         <h2 className="text-4xl font-bold text-gray-800">
           Crafted Comfort for Your Beautiful Space

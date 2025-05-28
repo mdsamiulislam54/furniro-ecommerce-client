@@ -9,6 +9,7 @@ import TopProducts from './Pages/TopProducts'
 import InspirationRooms from './Pages/InspirationRooms'
 import Testimonial from './Pages/Testimonial'
 import NewsLetter from './Pages/NewsLetter'
+import WelcomePopup from './Pages/WelcomePopup'
 
 function App() {
 
@@ -37,6 +38,9 @@ function App() {
         </section>
         <section>
           <NewsLetter/>
+        </section>
+        <section>
+          <WelcomePopup/>
         </section>
       </main>
   
