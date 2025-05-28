@@ -8,6 +8,7 @@ import Category from './Pages/Category'
 import TopProducts from './Pages/TopProducts'
 import InspirationRooms from './Pages/InspirationRooms'
 import Testimonial from './Pages/Testimonial'
+import NewsLetter from './Pages/NewsLetter'
 
 function App() {
 
@@ -33,6 +34,9 @@ function App() {
         </section>
         <section>
           <Testimonial/>
+        </section>
+        <section>
+          <NewsLetter/>
         </section>
       </main>
   
