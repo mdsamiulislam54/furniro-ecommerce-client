@@ -13,7 +13,7 @@ import { FaArrowCircleRight, FaArrowRight } from "react-icons/fa";
 
 const InspirationRooms = () => {
   return (
-    <div className="bg-secondary py-20">
+    <div className="bg-secondary py-20 ">
       <div className="w-11/12 mx-auto ">
         <div className="lg:flex items-center gap-5 overflow-hidden">
           <motion.div className="flex-1 max-lg:mb-8" accordion

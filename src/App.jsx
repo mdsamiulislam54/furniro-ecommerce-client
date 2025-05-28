@@ -7,6 +7,7 @@ import About from './Pages/About'
 import Category from './Pages/Category'
 import TopProducts from './Pages/TopProducts'
 import InspirationRooms from './Pages/InspirationRooms'
+import Testimonial from './Pages/Testimonial'
 
 function App() {
 
@@ -29,6 +30,9 @@ function App() {
         </section>
         <section>
           <About/>
+        </section>
+        <section>
+          <Testimonial/>
         </section>
       </main>
   

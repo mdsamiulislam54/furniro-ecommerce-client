@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Sadia Rahman",
+    "review": "Absolutely loved the service! Very professional and quick.",
+    "date": "2025-05-10",
+    "address": "Dhaka, Bangladesh",
+    "img": "https://i1.rgstatic.net/ii/profile.image/11431281095029283-1667703872088_Q512/Sadia-Rahman-11.jpg"
+  },
+  {
+    "name": "Tanvir Hasan",
+    "review": "Highly recommended. The team was super helpful throughout.",
+    "date": "2025-04-18",
+    "address": "Chattogram, Bangladesh",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVPrWT_WEAai2sKYwK6Ip7LO2tyGfkNVKatw&s"
+  },
+  {
+    "name": "Rafiul Islam",
+    "review": "Their designs are clean and modern. I’ll come back again.",
+    "date": "2025-03-12",
+    "address": "Sylhet, Bangladesh",
+    "img": "https://avatars.githubusercontent.com/u/26069096?v=4"
+  },
+  {
+    "name": "Farzana Akter",
+    "review": "Excellent experience. Very responsive and skilled team.",
+    "date": "2025-05-01",
+    "address": "Rajshahi, Bangladesh",
+    "img": "https://ums-local.seu.edu.bd/file-server/v/2.0.0/profile-picture/sonia.zaman_43xwxijv.jpeg"
+  },
+  {
+    "name": "Mahin Alam",
+    "review": "Fast delivery with quality work. Recommended!",
+    "date": "2025-02-25",
+    "address": "Barishal, Bangladesh",
+    "img": "https://www.uiu.ac.bd/wp-content/uploads/2023/11/0777_075248.jpg"
+  },
+  {
+    "name": "Sumaiya Hossain",
+    "review": "Loved the UI designs they created. Super clean.",
+    "date": "2025-05-15",
+    "address": "Khulna, Bangladesh",
+    "img": "https://i1.rgstatic.net/ii/profile.image/1043544441634821-1625811791997_Q512/Sumaiya-Hossain.jpg"
+  },
+  {
+    "name": "Rakin Chowdhury",
+    "review": "Very helpful team. Solved all my issues quickly.",
+    "date": "2025-04-05",
+    "address": "Cumilla, Bangladesh",
+    "img": "https://media.licdn.com/dms/image/v2/D5603AQFmz2oYgL5XfQ/profile-displayphoto-shrink_200_200/B56ZQbQTOlGQAc-/0/1735624047025?e=2147483647&v=beta&t=ZC1g0kt2e8Ytewq9wcOps2MTl7zW0m1lZUe5-MA8-V8"
+  },
+  {
+    "name": "Anika Sultana",
+    "review": "Great communication and top-notch design skills.",
+    "date": "2025-03-20",
+    "address": "Narayanganj, Bangladesh",
+    "img": "https://media.licdn.com/dms/image/v2/D5603AQEeNb6OLaAzJA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723915911057?e=2147483647&v=beta&t=camdViUHo8Cm1ViJ4ZORHhJkek3UsCSS7eU_H0mWfX8"
+  },
+  {
+    "name": "Tahmid Rahman",
+    "review": "They understood my requirements perfectly. Awesome service!",
+    "date": "2025-04-28",
+    "address": "Mymensingh, Bangladesh",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXdcJb9XkeeKhZU94NAvvWlFoEpa8Zp4kNUA&s"
+  },
+  {
+    "name": "Mehjabin Noor",
+    "review": "One of the best experiences I’ve had so far.",
+    "date": "2025-05-22",
+    "address": "Rangpur, Bangladesh",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSuDDPLcHQpJISxQVForygueSmiGxZ_Pl0Yg&s"
+  }
+]
