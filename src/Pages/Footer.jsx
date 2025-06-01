@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa6";
 import { LiaGooglePlay } from "react-icons/lia";
 import { GrPaypal } from "react-icons/gr";
+import { motion } from "motion/react";
 
 const Footer = () => {
   return (
@@ -86,9 +87,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p className="mb-4 md:mb-0">
-            © 2025 Furnior, All rights reserved.
-          </p>
+          <p className="mb-4 md:mb-0">© 2025 Furnior, All rights reserved.</p>
           <div className="flex items-center gap-4 text-2xl">
             <LiaGooglePlay />
             <GrPaypal />
