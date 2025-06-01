@@ -64,19 +64,19 @@ const Header = () => {
         </div>
         <div className="lg:block hidden">
           <ul className=" flex items-center text-gray-700 gap-6">
-            <NavLink className="text-lg font-medium tracking-wide ">
+            <NavLink to={'/'} lassName="text-lg font-medium tracking-wide ">
               Home
             </NavLink>
-            <NavLink className="text-lg font-medium tracking-wide ">
+            <NavLink to={'/shop'} className="text-lg font-medium tracking-wide ">
               Shop
             </NavLink>
-            <NavLink className="text-lg font-medium tracking-wide ">
+            <NavLink to={'*'} className="text-lg font-medium tracking-wide ">
               About
             </NavLink>
-            <NavLink className="text-lg font-medium tracking-wide ">
+            <NavLink to={'*'} className="text-lg font-medium tracking-wide ">
               Contact
             </NavLink>
-            <NavLink className="text-lg font-medium tracking-wide ">
+            <NavLink to={'*'} className="text-lg font-medium tracking-wide ">
               Blogs
             </NavLink>
           </ul>

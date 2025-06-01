@@ -11,6 +11,7 @@ import Login from './UserAuthentication/Login.jsx'
 import UserProvider from './Context/User/UserProvider/UserProvider.jsx'
 import Registration from './UserAuthentication/Registration.jsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import PageNotFound from './Pages/PageNotFound.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: 'register',
         Component:Registration
+      },
+      {
+        path:'*',
+        Component:PageNotFound
       }
     ]
   }

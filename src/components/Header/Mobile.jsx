@@ -48,15 +48,19 @@ const Mobile = ({ setShowMobileMenu }) => {
           <div>
             <img src={logo} alt="logo" className="w-[185px] h-[35px]" />
           </div>
-          <NavLink className="text-lg font-medium tracking-wide ">Home</NavLink>
-          <NavLink className="text-lg font-medium tracking-wide ">Shop</NavLink>
-          <NavLink className="text-lg font-medium tracking-wide ">
+          <NavLink to={"/"} lassName="text-lg font-medium tracking-wide ">
+            Home
+          </NavLink>
+          <NavLink to={"/shop"} className="text-lg font-medium tracking-wide ">
+            Shop
+          </NavLink>
+          <NavLink to={"*"} className="text-lg font-medium tracking-wide ">
             About
           </NavLink>
-          <NavLink className="text-lg font-medium tracking-wide ">
+          <NavLink to={"*"} className="text-lg font-medium tracking-wide ">
             Contact
           </NavLink>
-          <NavLink className="text-lg font-medium tracking-wide ">
+          <NavLink to={"*"} className="text-lg font-medium tracking-wide ">
             Blogs
           </NavLink>
         </ul>
@@ -94,7 +98,7 @@ const Mobile = ({ setShowMobileMenu }) => {
                 <Link
                   to="/login"
                   onClick={() => {
-                   setIsOpen(false);
+                    setIsOpen(false);
                     setShowMobileMenu(false);
                   }}
                   className="text-gray-700 hover:text-primary cursor-pointer"

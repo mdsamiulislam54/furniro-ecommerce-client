@@ -25,16 +25,16 @@ const Footer = () => {
               brighten up your home and workspace.
             </p>
             <div className="flex items-center gap-4 text-2xl">
-              <Link to="#">
+              <Link to="*">
                 <FaSquareFacebook className="hover:text-white" />
               </Link>
-              <Link to="#">
+              <Link to="*">
                 <FaSquareGithub className="hover:text-white" />
               </Link>
-              <Link to="#">
+              <Link to="*">
                 <FaSquareInstagram className="hover:text-white" />
               </Link>
-              <Link to="#">
+              <Link to="*">
                 <FaSquareYoutube className="hover:text-white" />
               </Link>
             </div>
@@ -44,10 +44,10 @@ const Footer = () => {
           <div>
             <h2 className="text-lg font-semibold mb-4">Company</h2>
             <div className="flex flex-col gap-2 text-sm">
-              <Link to="#">About Us</Link>
-              <Link to="#">Blog</Link>
-              <Link to="#">Contact</Link>
-              <Link to="#">Career</Link>
+              <Link to="*">About Us</Link>
+              <Link to="*">Blog</Link>
+              <Link to="*">Contact</Link>
+              <Link to="*">Career</Link>
             </div>
           </div>
 
@@ -55,10 +55,10 @@ const Footer = () => {
           <div>
             <h2 className="text-lg font-semibold mb-4">Customer Service</h2>
             <div className="flex flex-col gap-2 text-sm">
-              <Link to="#">My Account</Link>
-              <Link to="#">Track Your Order</Link>
-              <Link to="#">Return</Link>
-              <Link to="#">FAQ</Link>
+              <Link to="*">My Account</Link>
+              <Link to="*">Track Your Order</Link>
+              <Link to="*">Return</Link>
+              <Link to="*">FAQ</Link>
             </div>
           </div>
 
@@ -66,10 +66,10 @@ const Footer = () => {
           <div>
             <h2 className="text-lg font-semibold mb-4">Our Information</h2>
             <div className="flex flex-col gap-2 text-sm">
-              <Link to="#">Privacy</Link>
-              <Link to="#">User Terms</Link>
-              <Link to="#">Condition</Link>
-              <Link to="#">FAQ</Link>
+              <Link to="*">Privacy</Link>
+              <Link to="*">User Terms</Link>
+              <Link to="*">Condition</Link>
+              <Link to="*">FAQ</Link>
             </div>
           </div>
 
