@@ -10,6 +10,7 @@ import InspirationRooms from './Pages/InspirationRooms'
 import Testimonial from './Pages/Testimonial'
 import NewsLetter from './Pages/NewsLetter'
 import WelcomePopup from './Pages/WelcomePopup'
+import TrendingProducts from './Pages/TrendingProducts'
 
 function App() {
 
@@ -26,6 +27,9 @@ function App() {
         </section>
         <section>
           <TopProducts/>
+        </section>
+        <section>
+         <TrendingProducts/>
         </section>
         <section>
           <InspirationRooms/>

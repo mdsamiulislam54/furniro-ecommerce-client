@@ -23,7 +23,7 @@ const Testimonial = () => {
       return data;
     },
   });
-  console.log(data);
+
   return (
     <div className="py-20 ">
       <div className="w-11/12 mx-auto  ">
