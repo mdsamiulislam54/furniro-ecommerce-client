@@ -5,6 +5,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { motion } from "motion/react";
 const TrendingProducts = () => {
   const { data } = useQuery({
     queryKey: ["all-products"],
@@ -43,7 +44,6 @@ const TrendingProducts = () => {
           slidesPerView={1}
           loop={true}
           breakpoints={{
-            
             640: { slidesPerView: 2 },
             768: { slidesPerView: 3 },
             1024: { slidesPerView: 4 },
@@ -53,13 +53,19 @@ const TrendingProducts = () => {
         >
           {data?.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                viewport={{ amount: 0.3 }}
+                className=""
+              >
                 <img
                   src={item.defaultColorImage}
                   alt={item.title}
                   className="w-80 object-contain h-80 mx-auto "
                 />
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
