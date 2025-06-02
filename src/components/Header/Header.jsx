@@ -21,7 +21,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const { user, logOutUser } = useContext(UserContext);
-  const { cart } = use(CartContext);
+  const { cart,cartDelete } = use(CartContext);
   const [isOpenCart, setIsOpenCart] = useState(false);
 
   useEffect(() => {
@@ -223,7 +223,7 @@ const Header = () => {
                       <h4 className="text-sm font-semibold">{item.name}</h4>
                       <p className="text-sm text-gray-500">${item.price}</p>
                     </div>
-                    <button className="text-red-500 hover:text-red-600 text-lg cursor-pointer">
+                    <button onClick={()=>cartDelete(item._id)} className="text-red-500 hover:text-red-600 text-lg cursor-pointer">
                       <RiDeleteBin2Fill />
                     </button>
                     <button className="text-red-500 hover:text-red-600 text-lg cursor-pointer">
