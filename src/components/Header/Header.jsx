@@ -15,6 +15,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 
+
 const Header = () => {
   const [isShowMobileMenu, setShowMobileMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -116,12 +117,25 @@ const Header = () => {
                 {cart.length}
               </motion.p>
             </span>
-            <img
+            
+          {
+            user ? (""):(  <img
               onClick={() => setIsOpen(!isOpen)}
               src={manIcons}
               alt="User"
+             
               className="w-7 h-7 cursor-pointer hover:scale-[90%] transition-all duration-500"
-            />
+            />)
+          }
+            {
+              user && (    <img
+              onClick={() => setIsOpen(!isOpen)}
+              src={user.photoURL}
+              alt="User"
+             
+              className="w-8 h-8 rounded-full border-2 border-primary cursor-pointer hover:scale-[90%] transition-all duration-500"
+            />)
+            }
           </div>
           <div>
             <button
@@ -149,11 +163,7 @@ const Header = () => {
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="absolute top-[60px] right-4 w-1/12 bg-white shadow-xl  p-4 rounded-lg z-50"
             >
-              {user && (
-                <h1 className="text-center my-2 font-bold">
-                  {user.displayName}
-                </h1>
-              )}
+           
               <ul className="space-y-2">
                 <li className="text-gray-700 hover:text-primary cursor-pointer font-medium ">
                   Profile

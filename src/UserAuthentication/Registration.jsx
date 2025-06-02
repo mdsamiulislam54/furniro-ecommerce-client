@@ -19,12 +19,13 @@ const Registration = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    const photoUrl =form.photoUrl.value;
 
     createUser(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
 
-        updateProfile(user, { displayName: name })
+        updateProfile(user, { displayName: name ,photoURL:photoUrl})
           .then(() => {
             Swal.fire({
               title: "Registration Successful",
@@ -95,7 +96,7 @@ const Registration = () => {
     <div className="">
       <div className=" lg:flex items-center justify-center p-6 min-h-screen  rounded-lg">
         <form
-          className="lg:flex lg:w-7/12 justify-between mx-auto gap-3  lg:h-[500px] shadow-lg   "
+          className="lg:flex lg:w-7/12 justify-between mx-auto gap-3  lg:h-[550px] shadow-lg   "
           accordion
           onSubmit={handleRegistration}
         >
@@ -123,6 +124,19 @@ const Registration = () => {
                 type="text"
                 name="name"
                 className="w-full p-2 border border-gray-300 rounded"
+                placeholder="Enter Your Name"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium mb-2" htmlFor="email">
+                PhotoUrl
+              </label>
+              <input
+                type="text"
+                name="photoUrl"
+                className="w-full p-2 border border-gray-300 rounded"
+                placeholder="Enter Your PhotoUrl"
                 required
               />
             </div>
@@ -135,6 +149,7 @@ const Registration = () => {
                 type="email"
                 name="email"
                 className="w-full p-2 border border-gray-300 rounded"
+                placeholder="Enter Your Email"
                 required
               />
             </div>
@@ -150,6 +165,7 @@ const Registration = () => {
                   type={showPassword ? "text" : "password"}
                   name="password"
                   className="w-full p-2 border border-gray-300 rounded"
+                  placeholder="Enter your Password"
                   required
                 />
                 <span className="absolute right-3 top-1/2 transform -translate-y-1/2">
