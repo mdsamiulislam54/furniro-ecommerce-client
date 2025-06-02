@@ -4,19 +4,24 @@ import manIcons from "../../assets/icons/man.png";
 import searchIcons from "../../assets/icons/serach.png";
 import heartIcons from "../../assets/icons/heart.png";
 import cartIcons from "../../assets/icons/cart.png";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, redirect } from "react-router";
 import { HiMenuAlt2 } from "react-icons/hi";
 import Mobile from "./Mobile";
 import { UserContext } from "../../Context/User/UserContextApi/UserContextApi";
 import Swal from "sweetalert2";
 import CartContext from "../../Context/CartContext/CartContext";
+import { AnimatePresence, motion } from "motion/react";
+import { div } from "motion/react-client";
+import { RiDeleteBin2Fill } from "react-icons/ri";
+import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 
 const Header = () => {
   const [isShowMobileMenu, setShowMobileMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const { user, logOutUser } = useContext(UserContext);
-  const {cart} = use(CartContext)
+  const { cart } = use(CartContext);
+  const [isOpenCart, setIsOpenCart] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,12 +34,6 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-// useEffect(() => {
-//   const cartItem = JSON.parse(localStorage.getItem("cart")||[]);
-//   if (cartItem) {
-//     setCart(cartItem);
-//   }
-// }, []);
 
   const handleLogout = () => {
     logOutUser()
@@ -56,8 +55,6 @@ const Header = () => {
         });
       });
   };
-
-
 
   return (
     <nav
@@ -96,8 +93,20 @@ const Header = () => {
             <img src={searchIcons} alt="Search" className="w-7 h-7" />
             <img src={heartIcons} alt="Wishlist" className="w-7 h-7" />
             <span className="relative">
-              <img src={cartIcons} alt="Cart" className="w-7 h-7" />
-              <p className="absolute -top-4 -right-2 text-2xl font-bold ">{cart.length}</p>
+              <img
+                src={cartIcons}
+                alt="Cart"
+                className="w-7 h-7 cursor-pointer"
+                onClick={() => setIsOpenCart(!isOpenCart)}
+              />
+              <motion.p
+                initial={{ x: [0, 1, 0], y: [0, 1, 0] }}
+                animate={{ x: [0, 3, 0], y: [0, 3, 0] }}
+                transition={{ duration: 5, repeat: Infinity }}
+                className="absolute -top-3 -right-1 text-sm font-bold "
+              >
+                {cart.length}
+              </motion.p>
             </span>
             <img
               onClick={() => setIsOpen(!isOpen)}
@@ -163,6 +172,44 @@ const Header = () => {
             </ul>
           </div>
         )}
+        <AnimatePresence>
+          {isOpenCart && (
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="absolute top-18 right-20 z-[100] bg-white p-4 rounded shadow-md w-80 overflow-y-auto max-h-80"
+            >
+              {cart.length > 0 ? (
+                cart.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 mb-4 border-b pb-2"
+                  >
+                    <img
+                      src={item.defaultColorImage}
+                      alt={item.title}
+                      className="w-14 h-14 object-contain rounded"
+                    />
+                    <div className="flex-1">
+                      <h4 className="text-sm font-semibold">{item.name}</h4>
+                      <p className="text-sm text-gray-500">${item.price}</p>
+                    </div>
+                    <button className="text-red-500 hover:text-red-600 text-lg cursor-pointer">
+                      <RiDeleteBin2Fill />
+                    </button>
+                    <button className="text-red-500 hover:text-red-600 text-lg cursor-pointer">
+                      <MdOutlineShoppingCartCheckout />
+                    </button>
+                  </div>
+                ))
+              ) : (
+                <p className="text-center text-gray-500">Your cart is empty.</p>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
