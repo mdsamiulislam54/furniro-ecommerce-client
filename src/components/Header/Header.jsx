@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { use, useContext, useEffect, useState } from "react";
 import logo from "../../assets/logo/logo.png";
 import manIcons from "../../assets/icons/man.png";
 import searchIcons from "../../assets/icons/serach.png";
@@ -9,12 +9,14 @@ import { HiMenuAlt2 } from "react-icons/hi";
 import Mobile from "./Mobile";
 import { UserContext } from "../../Context/User/UserContextApi/UserContextApi";
 import Swal from "sweetalert2";
+import CartContext from "../../Context/CartContext/CartContext";
 
 const Header = () => {
   const [isShowMobileMenu, setShowMobileMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const { user,logOutUser } = useContext(UserContext);
+  const { user, logOutUser } = useContext(UserContext);
+  const {cart} = use(CartContext)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +29,12 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+// useEffect(() => {
+//   const cartItem = JSON.parse(localStorage.getItem("cart")||[]);
+//   if (cartItem) {
+//     setCart(cartItem);
+//   }
+// }, []);
 
   const handleLogout = () => {
     logOutUser()
@@ -38,19 +46,18 @@ const Header = () => {
           icon: "success",
           confirmButtonText: "OK",
         });
-       
       })
       .catch((error) => {
-        Swal.fire({ 
+        Swal.fire({
           title: "Logout Failed",
           text: error.message,
           icon: "error",
           confirmButtonText: "OK",
         });
-
-        
       });
-  }
+  };
+
+
 
   return (
     <nav
@@ -64,19 +71,22 @@ const Header = () => {
         </div>
         <div className="lg:block hidden">
           <ul className=" flex items-center text-gray-700 gap-6">
-            <NavLink to={'/'} lassName="text-lg font-medium tracking-wide ">
+            <NavLink to={"/"} lassName="text-lg font-medium tracking-wide ">
               Home
             </NavLink>
-            <NavLink to={'/shop'} className="text-lg font-medium tracking-wide ">
+            <NavLink
+              to={"/shop"}
+              className="text-lg font-medium tracking-wide "
+            >
               Shop
             </NavLink>
-            <NavLink to={'*'} className="text-lg font-medium tracking-wide ">
+            <NavLink to={"*"} className="text-lg font-medium tracking-wide ">
               About
             </NavLink>
-            <NavLink to={'*'} className="text-lg font-medium tracking-wide ">
+            <NavLink to={"*"} className="text-lg font-medium tracking-wide ">
               Contact
             </NavLink>
-            <NavLink to={'*'} className="text-lg font-medium tracking-wide ">
+            <NavLink to={"*"} className="text-lg font-medium tracking-wide ">
               Blogs
             </NavLink>
           </ul>
@@ -85,7 +95,10 @@ const Header = () => {
           <div className="flex gap-4 items-center max-lg:hidden">
             <img src={searchIcons} alt="Search" className="w-7 h-7" />
             <img src={heartIcons} alt="Wishlist" className="w-7 h-7" />
-            <img src={cartIcons} alt="Cart" className="w-7 h-7" />
+            <span className="relative">
+              <img src={cartIcons} alt="Cart" className="w-7 h-7" />
+              <p className="absolute -top-4 -right-2 text-2xl font-bold ">{cart.length}</p>
+            </span>
             <img
               onClick={() => setIsOpen(!isOpen)}
               src={manIcons}
@@ -113,11 +126,12 @@ const Header = () => {
 
         {isOpen && (
           <div className="absolute top-[60px] right-0 bg-white shadow-xl w-64 p-4 rounded-lg z-50">
-            {user && <h1 className="text-center my-2 font-bold">{user.displayName}</h1>}
+            {user && (
+              <h1 className="text-center my-2 font-bold">{user.displayName}</h1>
+            )}
             <ul className="space-y-2">
               <li className="text-gray-700 hover:text-primary cursor-pointer font-medium ">
                 Profile
-                
               </li>
               <li className="text-gray-700 hover:text-primary cursor-pointer font-medium">
                 Orders
@@ -127,7 +141,7 @@ const Header = () => {
               </li>
               {user?.email ? (
                 <Link
-                  onClick={()=>{
+                  onClick={() => {
                     handleLogout();
                     setIsOpen(false);
                   }}
@@ -140,7 +154,6 @@ const Header = () => {
                   to={"/login"}
                   onClick={() => {
                     setIsOpen(false);
-                    
                   }}
                   className=" cursor-pointer bg-primary hover:bg-primary/85 text-white py-2 px-4 rounded transition duration-300 font-medium w-full "
                 >

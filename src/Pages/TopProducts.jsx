@@ -7,8 +7,14 @@ import { FaHeart } from "react-icons/fa";
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
 import { motion } from "motion/react"
+import { use } from "react";
+import CartContext from "../Context/CartContext/CartContext";
 
 const TopProducts = () => {
+
+  const {addToCart} = use(CartContext)
+ 
+
   const { data, isError, isLoading } = useQuery({
     queryKey: ["topProducts"],
     queryFn: async () => {
@@ -22,12 +28,18 @@ const TopProducts = () => {
     },
   });
 
+  
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
   if (isError) {
     return <div>Error loading products</div>;
   }
+
+
+
+
 
   return (
     <div>
@@ -40,7 +52,7 @@ const TopProducts = () => {
             whileInView={{ opacity: 1, y: 0 ,}}
             transition={{duration: 0.5, ease: "easeInOut"}}
               viewport={{ amount: 0.3}}
-              key={product.id}
+              key={product._id}
               className=" p-4 rounded-lg shadow-lg relative"
             >
               <img
@@ -78,6 +90,7 @@ const TopProducts = () => {
               </span>
               <div className="absolute top-[140px] left-2 flex flex-col gap-2 items-center ">
                 <button
+                onClick={()=>addToCart(product)}
                   className="cursor-pointer " 
                   data-tooltip-id="add-to-cart-tooltip"
                   data-tooltip-content="Add to cart"
