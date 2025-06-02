@@ -11,7 +11,7 @@ import { UserContext } from "../../Context/User/UserContextApi/UserContextApi";
 import Swal from "sweetalert2";
 import CartContext from "../../Context/CartContext/CartContext";
 import { AnimatePresence, motion } from "motion/react";
-import { div } from "motion/react-client";
+
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 
@@ -90,13 +90,21 @@ const Header = () => {
         </div>
         <div>
           <div className="flex gap-4 items-center max-lg:hidden">
-            <img src={searchIcons} alt="Search" className="w-7 h-7" />
-            <img src={heartIcons} alt="Wishlist" className="w-7 h-7" />
+            <img
+              src={searchIcons}
+              alt="Search"
+              className="w-7 h-7 cursor-pointer hover:scale-[90%] transition-all duration-500"
+            />
+            <img
+              src={heartIcons}
+              alt="Wishlist"
+              className="w-7 h-7 cursor-pointer hover:scale-[90%] transition-all duration-500"
+            />
             <span className="relative">
               <img
                 src={cartIcons}
                 alt="Cart"
-                className="w-7 h-7 cursor-pointer"
+                className="w-7 h-7 cursor-pointer hover:scale-[90%] transition-all duration-500"
                 onClick={() => setIsOpenCart(!isOpenCart)}
               />
               <motion.p
@@ -112,7 +120,7 @@ const Header = () => {
               onClick={() => setIsOpen(!isOpen)}
               src={manIcons}
               alt="User"
-              className="w-7 h-7"
+              className="w-7 h-7 cursor-pointer hover:scale-[90%] transition-all duration-500"
             />
           </div>
           <div>
@@ -132,52 +140,61 @@ const Header = () => {
         >
           <Mobile setShowMobileMenu={setShowMobileMenu} />
         </div>
-
-        {isOpen && (
-          <div className="absolute top-[60px] right-0 bg-white shadow-xl w-64 p-4 rounded-lg z-50">
-            {user && (
-              <h1 className="text-center my-2 font-bold">{user.displayName}</h1>
-            )}
-            <ul className="space-y-2">
-              <li className="text-gray-700 hover:text-primary cursor-pointer font-medium ">
-                Profile
-              </li>
-              <li className="text-gray-700 hover:text-primary cursor-pointer font-medium">
-                Orders
-              </li>
-              <li className="text-gray-700 hover:text-primary cursor-pointer font-medium mb-4">
-                Settings
-              </li>
-              {user?.email ? (
-                <Link
-                  onClick={() => {
-                    handleLogout();
-                    setIsOpen(false);
-                  }}
-                  className="  cursor-pointer bg-primary hover:bg-primary/85 text-white py-2 px-4 rounded transition duration-300 font-medium w-full "
-                >
-                  LogOut
-                </Link>
-              ) : (
-                <Link
-                  to={"/login"}
-                  onClick={() => {
-                    setIsOpen(false);
-                  }}
-                  className=" cursor-pointer bg-primary hover:bg-primary/85 text-white py-2 px-4 rounded transition duration-300 font-medium w-full "
-                >
-                  Login
-                </Link>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="absolute top-[60px] right-4 w-1/12 bg-white shadow-xl  p-4 rounded-lg z-50"
+            >
+              {user && (
+                <h1 className="text-center my-2 font-bold">
+                  {user.displayName}
+                </h1>
               )}
-            </ul>
-          </div>
-        )}
+              <ul className="space-y-2">
+                <li className="text-gray-700 hover:text-primary cursor-pointer font-medium ">
+                  Profile
+                </li>
+                <li className="text-gray-700 hover:text-primary cursor-pointer font-medium">
+                  Orders
+                </li>
+                <li className="text-gray-700 hover:text-primary cursor-pointer font-medium mb-4">
+                  Settings
+                </li>
+                {user?.email ? (
+                  <Link
+                    onClick={() => {
+                      handleLogout();
+                      setIsOpen(false);
+                    }}
+                    className="  cursor-pointer bg-primary hover:bg-primary/85 text-white py-2 px-4 rounded transition duration-300 font-medium w-full "
+                  >
+                    LogOut
+                  </Link>
+                ) : (
+                  <Link
+                    to={"/login"}
+                    onClick={() => {
+                      setIsOpen(false);
+                    }}
+                    className=" cursor-pointer bg-primary hover:bg-primary/85 text-white py-2 px-4 rounded transition duration-300 font-medium w-full "
+                  >
+                    Login
+                  </Link>
+                )}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
         <AnimatePresence>
           {isOpenCart && (
             <motion.div
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -50 }}
+              initial={{ opacity: 0, x: 300 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="absolute top-18 right-20 z-[100] bg-white p-4 rounded shadow-md w-80 overflow-y-auto max-h-80"
             >
@@ -185,7 +202,7 @@ const Header = () => {
                 cart.map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-3 mb-4 border-b pb-2"
+                    className="flex items-center gap-3 mb-4 border-b-2 border-primary pb-2"
                   >
                     <img
                       src={item.defaultColorImage}
