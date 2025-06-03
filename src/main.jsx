@@ -13,6 +13,7 @@ import Registration from "./UserAuthentication/Registration.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PageNotFound from "./Pages/PageNotFound.jsx";
 import { CartContextProvider } from "./Context/CartContext/CartContext.jsx";
+import Shop from "./Pages/Shop/Shop.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         Component: Registration,
+      },
+      {
+        path:"shop",
+        element:<Shop/>
       },
       {
         path: "*",

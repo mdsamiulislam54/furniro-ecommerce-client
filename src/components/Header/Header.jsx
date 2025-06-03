@@ -13,16 +13,16 @@ import CartContext from "../../Context/CartContext/CartContext";
 import { AnimatePresence, motion } from "motion/react";
 
 import { RiDeleteBin2Fill } from "react-icons/ri";
-import { MdOutlineShoppingCartCheckout } from "react-icons/md";
-
+import { MdClose, MdOutlineShoppingCartCheckout } from "react-icons/md";
 
 const Header = () => {
   const [isShowMobileMenu, setShowMobileMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const { user, logOutUser } = useContext(UserContext);
-  const { cart,cartDelete } = use(CartContext);
+  const { cart, cartDelete } = use(CartContext);
   const [isOpenCart, setIsOpenCart] = useState(false);
+  const [subtotal, setSubtotal] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,6 +56,11 @@ const Header = () => {
         });
       });
   };
+
+  useEffect(() => {
+    const subTotal = cart.reduce((acc, item) => acc + item.price, 0);
+    setSubtotal(subTotal)
+  }, [cart]);
 
   return (
     <nav
@@ -117,25 +122,25 @@ const Header = () => {
                 {cart.length}
               </motion.p>
             </span>
-            
-          {
-            user ? (""):(  <img
-              onClick={() => setIsOpen(!isOpen)}
-              src={manIcons}
-              alt="User"
-             
-              className="w-7 h-7 cursor-pointer hover:scale-[90%] transition-all duration-500"
-            />)
-          }
-            {
-              user && (    <img
-              onClick={() => setIsOpen(!isOpen)}
-              src={user.photoURL}
-              alt="User"
-             
-              className="w-8 h-8 rounded-full border-2 border-primary cursor-pointer hover:scale-[90%] transition-all duration-500"
-            />)
-            }
+
+            {user ? (
+              ""
+            ) : (
+              <img
+                onClick={() => setIsOpen(!isOpen)}
+                src={manIcons}
+                alt="User"
+                className="w-7 h-7 cursor-pointer hover:scale-[90%] transition-all duration-500"
+              />
+            )}
+            {user && (
+              <img
+                onClick={() => setIsOpen(!isOpen)}
+                src={user.photoURL}
+                alt="User"
+                className="w-8 h-8 rounded-full border-2 border-primary cursor-pointer hover:scale-[90%] transition-all duration-500"
+              />
+            )}
           </div>
           <div>
             <button
@@ -163,7 +168,6 @@ const Header = () => {
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="absolute top-20 right-4 w-1/12 bg-white shadow-xl  p-4  rounded-lg z-50"
             >
-           
               <ul className="space-y-2">
                 <li className="text-gray-700 hover:text-primary cursor-pointer font-medium ">
                   Profile
@@ -206,34 +210,53 @@ const Header = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="absolute top-20 right-20 z-[100] bg-white p-4 rounded shadow-lg w-80 overflow-y-auto max-h-80"
+              className="absolute top-0 right-2 z-[100] bg-white p-4 rounded shadow-lg w-90 overflow-y-auto h-auto"
             >
-              {cart.length > 0 ? (
-                cart.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-3 mb-4 border-b-2 border-primary pb-2"
-                  >
-                    <img
-                      src={item.defaultColorImage}
-                      alt={item.title}
-                      className="w-14 h-14 object-contain rounded"
-                    />
-                    <div className="flex-1">
-                      <h4 className="text-sm font-semibold">{item.name}</h4>
-                      <p className="text-sm text-gray-500">${item.price}</p>
+              <div className="flex justify-between items-center   mb-5 border-primary">
+                <h3 className="text-xl font-bold border-b-2 pb-5 border-primary">
+                  Shopping Cart
+                </h3>
+                <button
+                  className="bg-primary p-1 rounded-full text-white hover:scale-95 cursor-pointer transition-all duration-300"
+                  onClick={() => setIsOpenCart(!isOpenCart)}
+                >
+                  <MdClose size={24} />
+                </button>
+              </div>
+              <div className=" h-80 overflow-y-scroll">
+                {cart.length > 0 ? (
+                  cart.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 mb-4 b pb-2"
+                    >
+                      <img
+                        src={item.defaultColorImage}
+                        alt={item.title}
+                        className="w-14 h-14 object-contain rounded"
+                      />
+                      <div className="flex-1">
+                        <h4 className="text-sm font-semibold">{item.name}</h4>
+                        <p className="text-sm text-gray-500">${item.price}</p>
+                      </div>
+                      <button
+                        onClick={() => cartDelete(item._id)}
+                        className="text-red-500 hover:text-red-600 text-lg cursor-pointer"
+                      >
+                        <RiDeleteBin2Fill />
+                      </button>
                     </div>
-                    <button onClick={()=>cartDelete(item._id)} className="text-red-500 hover:text-red-600 text-lg cursor-pointer">
-                      <RiDeleteBin2Fill />
-                    </button>
-                    <button className="text-red-500 hover:text-red-600 text-lg cursor-pointer">
-                      <MdOutlineShoppingCartCheckout />
-                    </button>
-                  </div>
-                ))
-              ) : (
-                <p className="text-center text-gray-500">Your cart is empty.</p>
-              )}
+                  ))
+                ) : (
+                  <p className="text-center text-gray-500">
+                    Your cart is empty.
+                  </p>
+                )}
+              </div>
+              <div className="mt-20 flex justify-between items-center pb-4 border-b-2 border-primary">
+                <p className="text-lg font-bold tracking-wide">Subtotal </p>
+                <p className="text-primary font-bold text-md">$ {subtotal}</p>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
