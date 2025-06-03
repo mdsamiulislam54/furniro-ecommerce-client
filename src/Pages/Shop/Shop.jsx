@@ -6,6 +6,7 @@ import filterIcon from "../../assets/icons/filter.png";
 import gridicon from "../../assets/icons/grid.png";
 import lineicon from "../../assets/icons/viewlist.png";
 import FilterPage from "./FilterPage";
+import { AnimatePresence,  } from "framer-motion";
 
 const Shop = () => {
   const [isFilterPageOpen, setIsFilterPageOpen] = useState(false);
@@ -35,10 +36,8 @@ const Shop = () => {
       {/* Filter and Sort Options */}
       <div className="bg-secondary py-4">
         <div className="w-11/12 mx-auto flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-
           {/* Filter Section */}
           <div className="flex  gap-6 items-center">
-
             {/* Filter Button */}
             <div className="relative flex items-center gap-2">
               <img
@@ -49,11 +48,13 @@ const Shop = () => {
               />
               <p className="text-xl font-medium">Filter</p>
 
-              {isFilterPageOpen && (
-                <div className="absolute top-12 left-0 z-50">
-                  <FilterPage onClose={() => setIsFilterPageOpen(false)} />
-                </div>
-              )}
+              <AnimatePresence>
+                {isFilterPageOpen && (
+                  <div className="absolute top-12 left-0 z-50">
+                    <FilterPage onClose={() => setIsFilterPageOpen(false)} />
+                  </div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Grid & List Icon */}
@@ -74,20 +75,19 @@ const Shop = () => {
             </div>
           </div>
 
-        <div className="flex justify-between gap-4">
-              {/* Show Count */}
-          <div className="flex items-center gap-4">
-            <p className="text-lg font-medium">Show</p>
-            <p className="bg-white py-2 px-5 font-bold rounded-md">16</p>
-          </div>
+          <div className="flex justify-between gap-4">
+            {/* Show Count */}
+            <div className="flex items-center gap-4">
+              <p className="text-lg font-medium">Show</p>
+              <p className="bg-white py-2 px-5 font-bold rounded-md">16</p>
+            </div>
 
-          {/* Short By */}
-          <div className="flex items-center gap-4">
-            <p className="lg:text-lg font-medium">Sort by</p>
-            <p className="bg-white py-2 px-5 font-bold rounded-md">Default</p>
+            {/* Short By */}
+            <div className="flex items-center gap-4">
+              <p className="lg:text-lg font-medium">Sort by</p>
+              <p className="bg-white py-2 px-5 font-bold rounded-md">Default</p>
+            </div>
           </div>
-        </div>
-
         </div>
       </div>
 

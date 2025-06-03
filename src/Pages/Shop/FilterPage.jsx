@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
+import { AnimatePresence, motion } from "framer-motion";
 
 const FilterPage = ({ onClose, onApply }) => {
   const [filters, setFilters] = useState({
@@ -9,19 +10,23 @@ const FilterPage = ({ onClose, onApply }) => {
     rating: "",
   });
 
-  const handleFilter = ()=>{
-     onClose(false)
-    onApply()
-   
-  }
+  const handleFilter = () => {
+    onClose(false);
+    onApply();
+  };
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
-      <div className="bg-white p-6 rounded-2xl w-full max-w-sm shadow-2xl relative animate-fadeInUp">
-
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.8 }}
+        transition={{ duration: 0.3 }}
+        className="bg-white p-6 rounded-2xl w-full max-w-sm shadow-2xl relative animate-fadeInUp"
+      >
         {/* Close Button */}
         <button
-          onClick={()=>onClose(false)}
+          onClick={() => onClose(false)}
           className="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-2xl"
         >
           <IoClose />
@@ -34,7 +39,6 @@ const FilterPage = ({ onClose, onApply }) => {
 
         {/* Filter Form */}
         <div className="flex flex-col gap-5">
-
           {/* Category */}
           <div>
             <label className="text-gray-700 font-medium">Category</label>
@@ -100,9 +104,8 @@ const FilterPage = ({ onClose, onApply }) => {
           >
             Apply Filters
           </button>
-
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
