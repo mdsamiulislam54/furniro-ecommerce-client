@@ -262,9 +262,9 @@ const Header = () => {
                 <p className="text-primary font-bold text-md">$ {subtotal}</p>
               </div>
               <div className="mt-4 flex justify-between items-center">
-                <Button text='cart' />
+                
                 <Button text='Checkout' />
-                <Button text='Compassion' />
+               
               </div>
             </motion.div>
           )}
