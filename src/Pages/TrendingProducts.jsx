@@ -6,16 +6,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { motion } from "motion/react";
+import useAllProducts from "../Api/useAllProducts";
 const TrendingProducts = () => {
-  const { data } = useQuery({
-    queryKey: ["all-products"],
-    queryFn: async () => {
-      const res = await fetch("http://localhost:5000/all-products");
-      return res.json();
-    },
-  });
-
-  //   console.log("Cached Data:", data.length);
+const {data,isError,isLoading} = useAllProducts()
+if(isError) return <p>Something wrong</p>
+if(isLoading) return <p>data loading...</p>
 
   return (
     <div className="py-10">
