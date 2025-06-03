@@ -14,6 +14,7 @@ import { AnimatePresence, motion } from "motion/react";
 
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { MdClose, MdOutlineShoppingCartCheckout } from "react-icons/md";
+import Button from "../Button";
 
 const Header = () => {
   const [isShowMobileMenu, setShowMobileMenu] = useState(false);
@@ -210,7 +211,7 @@ const Header = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="absolute top-0 right-2 z-[100] bg-white p-4 rounded shadow-lg w-90 overflow-y-auto h-auto"
+              className="absolute top-0 right-2 z-[100] bg-white p-4 rounded shadow-lg w-[400px] overflow-y-auto h-auto"
             >
               <div className="flex justify-between items-center   mb-5 border-primary">
                 <h3 className="text-xl font-bold border-b-2 pb-5 border-primary">
@@ -237,13 +238,16 @@ const Header = () => {
                       />
                       <div className="flex-1">
                         <h4 className="text-sm font-semibold">{item.name}</h4>
-                        <p className="text-sm text-gray-500">${item.price}</p>
+                        <span className="flex items-center gap-5">
+                          <p className="text-sm font-medium text-gray-600">1  x</p>
+                          <p className="text-sm text-primary">${item.price}</p>
+                        </span>
                       </div>
                       <button
                         onClick={() => cartDelete(item._id)}
-                        className="text-red-500 hover:text-red-600 text-lg cursor-pointer"
+                        className="text-primary hover:text-primary/90 text-lg cursor-pointer"
                       >
-                        <RiDeleteBin2Fill />
+                        <MdClose />
                       </button>
                     </div>
                   ))
@@ -254,8 +258,13 @@ const Header = () => {
                 )}
               </div>
               <div className="mt-20 flex justify-between items-center pb-4 border-b-2 border-primary">
-                <p className="text-lg font-bold tracking-wide">Subtotal </p>
+                <p className="text-lg font-medium tracking-wide">Subtotal :</p>
                 <p className="text-primary font-bold text-md">$ {subtotal}</p>
+              </div>
+              <div className="mt-4 flex justify-between items-center">
+                <Button text='cart' />
+                <Button text='Checkout' />
+                <Button text='Compassion' />
               </div>
             </motion.div>
           )}
