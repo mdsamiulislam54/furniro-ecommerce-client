@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
+import useFilteredProducts from "../../Api/useFilteredProducts";
 
-const FilterPage = ({ onClose, onApply }) => {
+const FilterPage = ({ onClose,  }) => {
   const [filters, setFilters] = useState({
     category: "",
     minPrice: "",
     maxPrice: "",
     rating: "",
   });
+const handleFilterProducts = useFilteredProducts(filters)
+console.log(handleFilterProducts)
 
   const handleFilter = () => {
     onClose(false);
-    onApply();
+    handleFilterProducts
   };
+
+  console.log(filters)
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">

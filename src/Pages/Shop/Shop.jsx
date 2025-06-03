@@ -11,6 +11,8 @@ import { AnimatePresence,  } from "framer-motion";
 const Shop = () => {
   const [isFilterPageOpen, setIsFilterPageOpen] = useState(false);
 
+  
+
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
