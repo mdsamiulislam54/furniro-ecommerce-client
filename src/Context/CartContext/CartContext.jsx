@@ -18,16 +18,14 @@ export const CartContextProvider = ({ children }) => {
       confirmButtonText: "Yes, delete it!",
       confirmButtonColor: "#B88E2F",
       cancelButtonColor: "#d33",
-    }).then((result)=>{
-        if(result.isConfirmed){
-            
-            Swal.fire("Deleted!", "Your item has been deleted.", "success");
-            const existingCart = cart.filter((item)=> item._id !== id)
-            localStorage.setItem('cart', JSON.stringify(existingCart))
-            setCart(existingCart)
-            
-        }
-    })
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+        const existingCart = cart.filter((item) => item._id !== id);
+        localStorage.setItem("cart", JSON.stringify(existingCart));
+        setCart(existingCart);
+      }
+    });
   };
 
   const addToCart = (product) => {

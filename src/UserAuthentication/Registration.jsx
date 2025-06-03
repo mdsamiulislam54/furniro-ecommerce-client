@@ -194,6 +194,7 @@ const Registration = () => {
           <div className="my-5 lg:flex justify-between gap-4 items-center">
             <button
               onClick={handleGoogleLogin}
+              type="button"
               className="flex items-center gap-3 max-lg:w-full justify-center max-lg:mb-4 px-4 py-1 text-black border border-gray-400 bg-white rounded-lg cursor-pointer"
             >
               <FcGoogle size={30} />

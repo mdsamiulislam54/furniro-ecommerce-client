@@ -161,7 +161,7 @@ const Header = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="absolute top-[60px] right-4 w-1/12 bg-white shadow-xl  p-4 rounded-lg z-50"
+              className="absolute top-20 right-4 w-1/12 bg-white shadow-xl  p-4  rounded-lg z-50"
             >
            
               <ul className="space-y-2">
@@ -190,7 +190,7 @@ const Header = () => {
                     onClick={() => {
                       setIsOpen(false);
                     }}
-                    className=" cursor-pointer bg-primary hover:bg-primary/85 text-white py-2 px-4 rounded transition duration-300 font-medium w-full "
+                    className=" cursor-pointer bg-primary hover:bg-primary/85 text-white py-2 px-8 rounded transition duration-300 font-medium w-full "
                   >
                     Login
                   </Link>
@@ -206,7 +206,7 @@ const Header = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="absolute top-18 right-20 z-[100] bg-white p-4 rounded shadow-md w-80 overflow-y-auto max-h-80"
+              className="absolute top-20 right-20 z-[100] bg-white p-4 rounded shadow-lg w-80 overflow-y-auto max-h-80"
             >
               {cart.length > 0 ? (
                 cart.map((item, index) => (

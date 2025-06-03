@@ -75,7 +75,7 @@ const Login = () => {
   };
 
   return (
-    <div className="">
+  <div className="">
       <div className="rounded-lg flex flex-col items-center justify-center min-h-screen ">
        
         <form
@@ -144,6 +144,7 @@ const Login = () => {
           <div className="my-5 flex gap-4 items-center justify-between">
             <button
               onClick={handleGoogleLogin}
+              type="button"
               className="flex items-center gap-3 px-4 py-1 text-black border border-gray-400 bg-white rounded-lg cursor-pointer"
             >
               <FcGoogle size={30} />
