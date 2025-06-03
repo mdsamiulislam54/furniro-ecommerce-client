@@ -11,14 +11,15 @@ const FilterPage = ({ onClose,  }) => {
     rating: "",
   });
 const handleFilterProducts = useFilteredProducts(filters)
-console.log(handleFilterProducts)
+
+
 
   const handleFilter = () => {
     onClose(false);
     handleFilterProducts
   };
 
-  console.log(filters)
+ 
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">

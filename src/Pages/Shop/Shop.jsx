@@ -7,11 +7,13 @@ import gridicon from "../../assets/icons/grid.png";
 import lineicon from "../../assets/icons/viewlist.png";
 import FilterPage from "./FilterPage";
 import { AnimatePresence,  } from "framer-motion";
+import useFilteredProducts from "../../Api/useFilteredProducts";
 
 const Shop = () => {
   const [isFilterPageOpen, setIsFilterPageOpen] = useState(false);
+    const {data}= useFilteredProducts()
+    console.log(data)
 
-  
 
   return (
     <div className="min-h-screen">
