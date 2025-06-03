@@ -9,6 +9,12 @@ const FilterPage = ({ onClose, onApply }) => {
     rating: "",
   });
 
+  const handleFilter = ()=>{
+     onClose(false)
+    onApply()
+   
+  }
+
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
       <div className="bg-white p-6 rounded-2xl w-full max-w-sm shadow-2xl relative animate-fadeInUp">
@@ -89,7 +95,7 @@ const FilterPage = ({ onClose, onApply }) => {
 
           {/* Apply Button */}
           <button
-            onClick={() => onApply(filters)}
+            onClick={handleFilter}
             className="bg-primary hover:bg-primary/90 transition text-white font-medium py-2 rounded-lg"
           >
             Apply Filters
