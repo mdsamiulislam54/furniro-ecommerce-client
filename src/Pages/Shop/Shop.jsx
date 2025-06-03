@@ -3,6 +3,7 @@ import images from "../../assets/shop.png";
 import { Link } from "react-router";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import filterIcon from "../../assets/icons/filter.png";
 const Shop = () => {
   return (
     <div className="min-h-screen ">
@@ -13,12 +14,29 @@ const Shop = () => {
         <div className="flex flex-col justify-center items-center ">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Shop</h1>
           <div className="flex items-center text-gray-600 text-sm gap-2">
-            <Link to="/" className="hover:text-primary transition font-medium hover:underline ">
+            <Link
+              to="/"
+              className="hover:text-primary transition font-medium hover:underline "
+            >
               Home
             </Link>
             <MdKeyboardArrowRight className="text-xl" />
             <span className="text-gray-500">Shop</span>
           </div>
+        </div>
+      </div>
+      <div className="bg-secondary py-4">
+        <div className="w-11/12 mx-auto">
+          <div>
+            <div>
+              <img src={filterIcon} alt="filter-icons" />
+            </div>
+            <div></div>
+            <div></div>
+          </div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
       <div className="w-11/12 mx-auto"></div>

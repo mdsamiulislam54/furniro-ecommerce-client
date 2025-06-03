@@ -154,11 +154,11 @@ const Header = () => {
         </div>
 
         <div
-          className={`absolute top-[0px] right-[-999px]    shadow-md w-8/12  bg-secondary md:hidden min-h-screen ${
+          className={`absolute top-[0px] right-[-999px]    shadow-md w-8/12  bg-secondary lg:hidden min-h-screen ${
             isShowMobileMenu ? "right-[0px]" : ""
           } transform transition-all duration-500 ease-in-out z-100`}
         >
-          <Mobile setShowMobileMenu={setShowMobileMenu} />
+          <Mobile setShowMobileMenu={setShowMobileMenu} setIsOpenCart={setIsOpenCart}  />
         </div>
         <AnimatePresence>
           {isOpen && (
@@ -211,7 +211,7 @@ const Header = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="absolute top-0 right-2 z-[100] bg-white p-4 rounded shadow-lg w-[400px] overflow-y-auto h-auto"
+              className="absolute top-0 right-2 z-[100] bg-white p-4 rounded shadow-lg w-[400px] overflow-y-scroll h-[550px]"
             >
               <div className="flex justify-between items-center   mb-5 border-primary">
                 <h3 className="text-xl font-bold border-b-2 pb-5 border-primary">
