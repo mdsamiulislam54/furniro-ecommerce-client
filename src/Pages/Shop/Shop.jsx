@@ -4,6 +4,8 @@ import { Link } from "react-router";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import filterIcon from "../../assets/icons/filter.png";
+import gridicon from "../../assets/icons/grid.png";
+import lineicon from "../../assets/icons/viewlist.png";
 const Shop = () => {
   return (
     <div className="min-h-screen ">
@@ -26,17 +28,36 @@ const Shop = () => {
         </div>
       </div>
       <div className="bg-secondary py-4">
-        <div className="w-11/12 mx-auto">
-          <div>
+        <div className="w-11/12 mx-auto flex justify-between items-center">
+          <div className="flex gap-10 items-center ">
             <div>
               <img src={filterIcon} alt="filter-icons" />
             </div>
-            <div></div>
-            <div></div>
+            <div>
+                 <img src={gridicon} alt="filter-icons" />
+            </div>
+            <div className="pr-4 border-r-2 border-primary ">
+                 <img src={lineicon} alt="filter-icons" />
+            </div>
+              <div>
+            <p className="text-md font-medium">
+                Showing 1-16 of <span>30</span> result
+            </p>
           </div>
-          <div></div>
-          <div></div>
-          <div></div>
+          </div>
+        
+          <div>
+            <span className="flex items-center gap-4">
+                <p className="text-lg font-medium ">Show</p>
+                <p className="bg-white py-3 px-8 font-bold rounded-md">16</p>
+            </span>
+          </div>
+          <div>
+             <span className="flex items-center gap-4">
+                <p className="text-lg font-medium ">Short by</p>
+                <p className="bg-white py-3 px-8 font-bold rounded-md">Default</p>
+            </span>
+          </div>
         </div>
       </div>
       <div className="w-11/12 mx-auto"></div>
