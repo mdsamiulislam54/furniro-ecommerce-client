@@ -17,6 +17,7 @@ import Shop from "./Pages/Shop/Shop.jsx";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
 import Order from "./Pages/Order/Order.jsx";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,14 +36,17 @@ const router = createBrowserRouter([
         Component: Registration,
       },
       {
-        path:"shop",
-        element:<Shop/>
+        path: "shop",
+        element: <Shop />,
       },
       {
-        path:'order',
-        element:<PrivateRoute><Order/></PrivateRoute>
-      }
-      ,
+        path: "order",
+        element: (
+          <PrivateRoute>
+            <Order />
+          </PrivateRoute>
+        ),
+      },
       {
         path: "*",
         Component: PageNotFound,
@@ -55,12 +59,14 @@ const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <UserProvider>
-      <CartContextProvider>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router}></RouterProvider>
-      </QueryClientProvider>
-      </CartContextProvider>
-    </UserProvider>
+    <QueryClientProvider client={queryClient}>
+      <UserProvider>
+        <CartContextProvider>
+          {/* <FilterProductsProvider> */}
+            <RouterProvider router={router}></RouterProvider>
+          {/* </FilterProductsProvider> */}
+        </CartContextProvider>
+      </UserProvider>
+    </QueryClientProvider>
   </StrictMode>
 );
