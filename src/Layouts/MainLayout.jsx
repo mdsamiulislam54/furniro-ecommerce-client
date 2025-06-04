@@ -5,7 +5,7 @@ import Footer from '../Pages/Footer'
 
 const MainLayout = () => {
   const {pathname} = useLocation()
-  console.log(pathname)
+
  
   return (
     <div>

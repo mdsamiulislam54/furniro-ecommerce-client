@@ -7,6 +7,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import auth from "../../../firbase-config";
+import axios from "axios";
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState();
@@ -28,15 +29,29 @@ const UserProvider = ({ children }) => {
     return auth.signOut();
   };
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-      setUser(currentUser);
-      setLoading(false);
-    });
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+ useEffect(() => {
+  const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+    setUser(currentUser);
+
+    if (currentUser) {
+      const userData = { email: currentUser.email };
+      
+      axios
+        .post("http://localhost:5000/jwt", userData, {
+          withCredentials: true,
+        })
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err));
+    }
+
+    setLoading(false);
+  });
+
+  return () => {
+    unsubscribe();
+  };
+}, []);
+
 
   const userInfo = {
     user,

@@ -13,12 +13,7 @@ const Shop = () => {
     rating: "",
   });
 
-  const { data, isLoading, isError } = useFilteredProducts(filters);
-
-  if (isError) {
-    return console.error("Error fetching data");
-  }
-  if (isLoading) return <p>Loading...</p>;
+  const { data, loading, error } = useFilteredProducts(filters);
 
   const handleCategoryClick = (categoryName, isChecked) => {
     setFilters((prev) => {
@@ -63,10 +58,11 @@ const Shop = () => {
             <span className="text-gray-500">Shop</span>
           </div>
         </div>
-      </div> 
+      </div>
+
       <div className="flex justify-between py-4 w-11/12 mx-auto">
         <div>
-           <h2 className="text-2xl font-bold text-primary mb-6 border-b-2 pb-2">
+          <h2 className="text-2xl font-bold text-primary mb-6 border-b-2 pb-2">
             Filter Option
           </h2>
         </div>
@@ -75,64 +71,74 @@ const Shop = () => {
         </div>
 
         <div>
-          <p>
-            Sort by :
-          </p>
-         <select name="Default" id="">
-          <option value="Default">Default</option>
-         </select>
+          <p>Sort by :</p>
+          <select name="Default" id="">
+            <option value="Default">Default</option>
+          </select>
         </div>
-
-
       </div>
 
       <div className="grid grid-cols-5 w-11/12 mx-auto py-10 gap-4">
         {/* Filter Section */}
         <div className="col-span-1">
-         
-
-          <div className="">
+          <div>
             {/* Category Filter */}
-            <div className="">
-              <label className="text-gray-700 font-medium mb-3 block">
-                Category
-              </label>
-
-              <div className="flex flex-col gap-3 pl-6 h-[300px] overflow-y-scroll ">
-                {categories.map((item, index) => (
-                  <label
-                    key={index}
-                    className="flex items-center gap-3 cursor-pointer"
-                  >
-                    <input
-                      type="checkbox"
-                      value={item.name}
-                      onChange={(e) =>
-                        handleCategoryClick(item.name, e.target.checked)
-                      }
-                      checked={filters.category === item.name}
-                      className="w-4 h-4"
-                    />
-                    <div className="flex items-center gap-2">
-                      {item.icon}
-                      <span>{item.name}</span>
-                    </div>
-                  </label>
-                ))}
-              </div>
+            <label className="text-gray-700 font-medium mb-3 block">
+              Category
+            </label>
+            <div className="flex flex-col gap-3 pl-6 h-[300px] overflow-y-scroll">
+              {categories.map((item, index) => (
+                <label
+                  key={index}
+                  className="flex items-center gap-3 cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    value={item.name}
+                    onChange={(e) =>
+                      handleCategoryClick(item.name, e.target.checked)
+                    }
+                    checked={filters.category === item.name}
+                    className="w-4 h-4"
+                  />
+                  <span>{item.name}</span>
+                </label>
+              ))}
             </div>
           </div>
         </div>
+
         <div className="col-span-4">
-         
-          {data?.length > 0 ? (
-            <div className="grid grid-cols-3 gap-4">
-              {data.map((product) => (
-                <ProductsCard key={product.id} product={product} />
-              ))}
+          {/* Loading UI */}
+          {loading && (
+            <div className="text-center py-10">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500 mx-auto mb-4"></div>
+              <p className="text-gray-600 text-lg">Loading products...</p>
             </div>
-          ) : (
-            <p>No products found</p>
+          )}
+
+          {/* Error UI */}
+          {error && (
+            <div className="bg-red-100 text-red-700 p-4 rounded shadow-md text-center mb-4">
+              {error.response && error.response.status === 403
+                ? "⚠️ Unauthorized Access: Please login first."
+                : `❌ ${error.message || "Something went wrong. Please try again later."}`}
+            </div>
+          )}
+
+          {/* Product List */}
+          {!loading && !error && (
+            <>
+              {data?.length > 0 ? (
+                <div className="grid grid-cols-3 gap-4">
+                  {data.map((product) => (
+                    <ProductsCard key={product._id} product={product} />
+                  ))}
+                </div>
+              ) : (
+                <p className="text-center text-gray-600 text-lg">No products found</p>
+              )}
+            </>
           )}
         </div>
       </div>
