@@ -12,7 +12,7 @@ import useFilteredProducts from "../../Api/useFilteredProducts";
 const Shop = () => {
   const [isFilterPageOpen, setIsFilterPageOpen] = useState(false);
     const {data}= useFilteredProducts()
-    console.log(data)
+   
 
 
   return (

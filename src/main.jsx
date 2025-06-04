@@ -14,6 +14,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PageNotFound from "./Pages/PageNotFound.jsx";
 import { CartContextProvider } from "./Context/CartContext/CartContext.jsx";
 import Shop from "./Pages/Shop/Shop.jsx";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
+import Order from "./Pages/Order/Order.jsx";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,11 @@ const router = createBrowserRouter([
         path:"shop",
         element:<Shop/>
       },
+      {
+        path:'order',
+        element:<PrivateRoute><Order/></PrivateRoute>
+      }
+      ,
       {
         path: "*",
         Component: PageNotFound,
